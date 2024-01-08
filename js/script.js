@@ -112,16 +112,16 @@ function updateText() {
 
 function redirectToex() {
   // Replace 'destination.html' with the actual URL of the destination page
-  window.location.href = 'about.html #ex';
+  window.location.href = 'about.html#ex';
 }
 
 function redirectToEd() {
   // Replace 'destination.html' with the actual URL of the destination page
-  window.location.href = 'about.html #ed';
+  window.location.href = 'about.html#ed';
 }
 function redirectToCe() {
   // Replace 'destination.html' with the actual URL of the destination page
-  window.location.href = 'about.html #ce';
+  window.location.href = 'about.html#ce';
 }
 
 
