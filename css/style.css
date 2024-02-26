@@ -27,15 +27,19 @@ a:link{
    font-size: 30px;
 }
 .navbar a:link {
-    color: rgb(252, 252, 252);
-    font-size: 30px;
+    color: rgb(6, 6, 6);
+    background-color: rgb(251, 246, 246);
+    font-size: 25px;
+    border-radius: 25px;
+    padding: 5px;
+    margin: 3px;
 }
 .navbar a:visited {
-    color: rgb(255, 255, 255);
+    color: rgb(8, 8, 8);
 }
 .navbar a:hover {
-    background-color: rgb(255, 255, 255);
-    color: black;
+     background-color: rgb(7, 7, 7);
+    color: rgb(249, 246, 246);
      
 } 
 
@@ -238,6 +242,7 @@ a:link{
   grid-template-columns: 1fr auto 1fr;
   grid-gap: 20px;
   align-items: center;
+  text-align: center;
 }
 
 .lhe h2::before,
@@ -589,6 +594,9 @@ footer {
   }
   .navbar a:link {
     font-size: 16px;
+    padding: 4px;
+    border-radius: 20px;
+    margin: 5px;
   }
   
   .container {
