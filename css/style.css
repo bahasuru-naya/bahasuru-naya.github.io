@@ -102,13 +102,12 @@ a:link {
   display: flex;
   justify-content: center;
   height: auto;
-  align-items: center;
-  background-color: rgb(3, 1, 0);
+  align-items: center;  
   font-family: "Permanent Marker", cursive;
 }
 
 .auto-text h1 {
-  color: #dbfd03;
+  color: #8b8b8a;
 }
 
 .faculty-image {
