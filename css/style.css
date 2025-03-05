@@ -1,47 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{    
-   
-    min-height: 100vh;    
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-       
+
+body {
+
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+
 }
-a:link{
+
+a:link {
   text-decoration: none;
 
 }
-.navbar{
-    background-color: rgb(0, 0, 0);
-   
+
+.navbar {
+  background-color: rgb(0, 0, 0);
+
 }
-.navbar h1{
-   background-color: #fff;
-   color: #fffafa;
-   font-size: 30px;
+
+.navbar h1 {
+  background-color: #fff;
+  color: #fffafa;
+  font-size: 30px;
 }
+
 .navbar a:link {
-    color: rgb(6, 6, 6);
-    background-color: rgb(251, 246, 246);
-    font-size: 25px;
-    border-radius: 25px;
-    padding: 5px;
-    margin: 3px;
+  color: rgb(6, 6, 6);
+  background-color: rgb(251, 246, 246);
+  font-size: 25px;
+  border-radius: 25px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 3px;
 }
+
 .navbar a:visited {
-    color: rgb(8, 8, 8);
+  color: rgb(8, 8, 8);
 }
+
 .navbar a:hover {
-     background-color: rgb(7, 7, 7);
-    color: rgb(249, 246, 246);
-     
-} 
+  background-color: rgb(7, 7, 7);
+  color: rgb(249, 246, 246);
+  border: solid 2px rgb(255, 255, 255);
+
+}
 
 
 .featureproject {
@@ -50,45 +61,65 @@ a:link{
   display: grid;
   grid-template-columns: 400px 1fr;
   align-items: center;
+  border-radius: 10px;
 }
 
-.projectimage{
-  
-  padding:25px;
-  
-
-}
-.projectimage img{
-  
-  border:solid .10em rgb(0, 0, 0);
-  
-
+.featureproject img {  
+  border-radius: 10px;
 }
 
-.auto-text{
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    height: auto;
-    align-items: center;
-    background-color: rgb(3, 1, 0);
-    font-family: "Permanent Marker", cursive; 
+.featureproject a {  
+  border-radius: 20px; 
+  padding: 10px;
+  border: solid 2px rgb(10, 10, 10);
 }
-.auto-text h1{
-    color: #dbfd03;
+
+.featureproject a:hover {  
+  border-radius: 10px; 
+  padding: 10px;
+  border: solid 2px rgb(10, 10, 10);
 }
+
+.projectimage {
+
+  padding: 25px;
+
+}
+
+.projectimage img {
+
+  border: solid .10em rgb(80, 78, 78);
+  border-radius: 20px;
+}
+
+.auto-text {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  align-items: center;
+  background-color: rgb(3, 1, 0);
+  font-family: "Permanent Marker", cursive;
+}
+
+.auto-text h1 {
+  color: #dbfd03;
+}
+
 .faculty-image {
-    
-    max-width: 100%;
-    height: auto;
+
+  max-width: 100%;
+  height: auto;
 }
 
-* {box-sizing:border-box}
+* {
+  box-sizing: border-box
+}
 
-.blog{
+.blog {
   background-color: #fcfcfc;
   padding: 20px;
-
+  border-radius: 20px;
 }
 
 /* Slideshow container */
@@ -96,6 +127,7 @@ a:link{
   max-width: 600px;
   position: relative;
   margin: auto;
+  border-radius: 20px;
 }
 
 /* Hide the images by default */
@@ -103,8 +135,14 @@ a:link{
   display: none;
 }
 
+.mySlides  img{
+  border-radius: 20px;
+  border: solid .10em rgb(80, 78, 78);
+}
+
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -126,8 +164,9 @@ a:link{
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
@@ -162,7 +201,8 @@ a:link{
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -174,34 +214,41 @@ a:link{
 
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
-.wrapper {   /* (.wrapper) to add gap between all the element inside the wrapper class */
+.wrapper {
+  /* (.wrapper) to add gap between all the element inside the wrapper class */
   display: grid;
   grid-gap: 0px;
- 
+
 }
 
 .top {
-  
+
   display: grid;
-  grid-gap: 0px;  
+  grid-gap: 0px;
   grid-template-areas:
     "hero cta1"
-    
+
 }
 
 .hero {
   grid-area: hero;
   min-height: 500px;
-  
-  background: rgb(0, 0, 0) ;
+
+  background: rgb(0, 0, 0);
   background-size: cover;
   background-position: bottom right;
-  padding:0px;
-  display: flex; /* flex box work much better here */
+  padding: 0px;
+  display: flex;
+  /* flex box work much better here */
   flex-direction: column;
   align-items: start;
   align-items: center;
@@ -209,7 +256,7 @@ a:link{
   align-content: center;
 }
 
-.hero > * {
+.hero>* {
   background: rgb(0, 0, 0);
   color: #fffcfc;
   padding: 0px;
@@ -217,22 +264,29 @@ a:link{
   justify-items: center;
   align-content: center;
 }
+
 .cta {
-  background: rgb(0, 0, 0); 
+  background: rgb(0, 0, 0);
   display: grid;
   align-items: center;
   justify-items: center;
   align-content: center;
 }
-.cta p {margin: 0; color: #f2f2f2;}
 
-.cta1 {grid-area: cta1;}
+.cta p {
+  margin: 0;
+  color: #f2f2f2;
+}
+
+.cta1 {
+  grid-area: cta1;
+}
 
 
 
 .name {
   font-size: 57px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 
@@ -253,9 +307,11 @@ a:link{
   background: linear-gradient(to var(--direction, left), rgb(255, 255, 255), transparent);
 }
 
-.lhe h2:after {--direction: right;}
+.lhe h2:after {
+  --direction: right;
+}
 
-.experience{
+.experience {
   margin: 0;
   display: flex;
   justify-content: center;
@@ -264,7 +320,13 @@ a:link{
   text-align: center;
   background-color: rgb(255, 255, 255);
   font-family: cursive;
+  border-radius: 20px;
 }
+
+.experience i{
+  background-color:  rgb(255, 255, 255);
+}
+
 .stats-container {
   margin: 40px;
   border: dotted rgb(0, 0, 0);
@@ -272,6 +334,7 @@ a:link{
   height: 120px;
   position: relative;
   padding: 20px;
+  border-radius: 20px;
 }
 
 .stats-container h4 {
@@ -310,97 +373,125 @@ a:link{
   padding: 20px 40px;
   border-radius: 100px;
   box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
-  
- 
+
+
   position: relative;
   overflow: hidden;
 }
+
 #cv:hover {
   background-color: rgb(17, 13, 13);
-  
+
 }
+
 #cv h3 {
   color: black;
 }
-#cv:hover  h3{
+
+#cv:hover h3 {
   color: rgb(255, 252, 252);
-  
+
 }
 
 
 #myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 30px; /* Place the button at the bottom of the page */
-  right: 35px; /* Place the button 30px from the right */
- 
-  z-index: 99; /* Make sure it does not overlap */
-  width:2.1em;
-	height:2.1em;
-  line-height:1.5em;
-  
-  outline: none; /* Remove outline */
-  border:solid .10em rgb(255, 255, 255);
-	border-radius:10em;
-  
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 30px;
+  /* Place the button at the bottom of the page */
+  right: 35px;
+  /* Place the button 30px from the right */
+
+  z-index: 99;
+  /* Make sure it does not overlap */
+  width: 2.1em;
+  height: 2.1em;
+  line-height: 1.5em;
+
+  outline: none;
+  /* Remove outline */
+  border: solid .10em rgb(255, 255, 255);
+  border-radius: 10em;
+
   background: linear-gradient(0deg, rgb(0, 0, 0) 1.0%, rgb(0, 0, 0) 99.0%);
-  color: rgb(255, 255, 255); /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 0px; /* Some padding */
- 
-  font-size: 35px; /* Increase font size */
-  transition:transform .3s ease-in;
+  color: rgb(255, 255, 255);
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 0px;
+  /* Some padding */
+
+  font-size: 35px;
+  /* Increase font size */
+  transition: transform .3s ease-in;
 }
 
 #myBtn:hover {
-  
-  transform: rotate(360deg);
+
+  transform: scale(1.2);
 }
 
 
 .container {
-    max-width: 1200px;
-    min-width: none;
-    margin: 0 auto;
-    padding: 10px;
-    
-    background-color: #000000;
-    box-shadow: 0 4px 8px rgba(255, 254, 254, 0.3);
-} 
-.container h2{
-    color: #fff;
+  max-width: 1200px;
+  min-width: none;
+  margin: 0 auto;
+  padding: 10px;
+
+  background-color: #000000;
+  box-shadow: 0 4px 8px rgba(255, 254, 254, 0.3);
+}
+
+.container h2 {
+  color: #fff;
 
 }
-.container h3{
-    color: #fffafa;
+
+.container h3 {
+  color: #fffafa;
 
 }
-.container ol{
-    color: #fffafa;
-    padding: 20px;
+
+.container ol {
+  color: #fffafa;
+  padding: 20px;
 
 }
-.container ul{
-    color: #fffafa;
-    padding: 20px;
+
+.container ul {
+  color: #fffafa;
+  padding: 20px;
 
 }
+
 .container a:link {
-    color: rgb(252, 252, 252);
-    background-color: black;
- }
-.container a:visited {
-    color: rgb(255, 255, 255);
+  color: rgb(252, 252, 252);
+  background-color: black;
+  border: solid 2px rgb(255, 255, 255);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
 }
+
+.container a:visited {
+  color: rgb(255, 255, 255);
+}
+
 .container a:hover {
-    background-color: rgb(255, 255, 255);
-    color: black;
-} 
+  background-color: rgb(255, 255, 255);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  color: black;
+}
 
 
 .image {
   margin-bottom: 2rem;
 }
+
 .image img {
   display: block;
   width: 100%;
@@ -415,7 +506,7 @@ a:link{
   margin: 0 auto;
   max-width: 1150px;
   min-width: 300px;
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 
 .tabs {
@@ -424,140 +515,166 @@ a:link{
   grid-template-rows: auto 1fr;
   height: auto;
 }
+
 .btn-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
 .button:nth-child(1) {
   border-top-left-radius: 0.5rem;
 }
+
 .button:nth-child(3) {
   border-top-right-radius: 0.5rem;
 }
+
 .button {
   padding: 1rem 0;
   border: none;
   font-size: 1rem;
   background: #494848;
   color: white;
-  cursor: pointer;  
+  font-weight: 500;
+  cursor: pointer;
   transition: all 0.3s linear;
   letter-spacing: 0.10rem;
 }
+
 .button:hover:not(.live) {
   background: #000000;
   color: white;
+  
 }
+
 .tabs-content {
   padding: 2rem 1.5rem;
 }
+
 /* hide content */
 .content {
   display: none;
 }
+
 .button.live {
   background: #ffffff;
   color: rgb(0, 0, 0);
+  font-weight: 600;
 }
+
 .content.live {
   display: block;
 }
 
 .year {
-    font-size: 5em;
-    color: white;
-    font-weight: bold;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .countdown {
-    margin: 30px;
-    background-color: rgba(0, 0, 0, 0.1);
-    width: 100%;
-    color: white;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .countdown div {
-    margin: 0 15px;
-    font-size: 2.5em;
-    font-weight: 500;
-    margin-top: -25px;
-    position: relative;
-    text-align: center;
-    width: 100px;
-  }
-  
-  .countdown div::before {
-    content: "";
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    font-size: 0.35em;
-    line-height: 35px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 500;
-    width: 100%;
-    height: 35px;
-  }
-  
-  .countdown #day::before {
-    content: "Days";
-  }
-  .countdown #hour::before {
-    content: "Hours";
-  }
-  .countdown #minute::before {
-    content: "Minutes";
-  }
-  .countdown #second::before {
-    content: "Seconds";
-  }
+  font-size: 5em;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  height: 100px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown {
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  color: white;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.countdown div {
+  margin: 0 15px;
+  font-size: 2.5em;
+  font-weight: 500;
+  margin-top: -25px;
+  position: relative;
+  text-align: center;
+  width: 100px;
+}
+
+.countdown div::before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  font-size: 0.35em;
+  line-height: 35px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  width: 100%;
+  height: 35px;
+}
+
+.countdown #day::before {
+  content: "Days";
+}
+
+.countdown #hour::before {
+  content: "Hours";
+}
+
+.countdown #minute::before {
+  content: "Minutes";
+}
+
+.countdown #second::before {
+  content: "Seconds";
+}
+
 footer {
-    background-color: #5a5757;
-    color: #fff;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    padding: 10px 0;
-}   
-.socialmenu{
   background-color: #5a5757;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 10px 0;
 }
-.socialmenu ul{
-  list-style: none;
-}
-.socialmenu ul li{
-  display: inline;
-  padding: 10px;
-}
-.socialmenu ul li a{
-  background-color: #5a5757;
-}
-.socialmenu ul li a:hover{
+
+.socialmenu {
   background-color: #5a5757;
 }
 
-    
+.socialmenu ul {
+  list-style: none;
+}
+
+.socialmenu ul li {
+  display: inline;
+  padding: 10px;
+}
+
+.socialmenu ul li a {
+  background-color: #5a5757;
+}
+
+.socialmenu ul li a:hover {
+  background-color: #5a5757;
+}
+.socialmenu ul li a img {
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(1, 1, 1, 0.3);
+}
+
 .preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgb(0, 0, 0);
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    transition: 0.1s linear;
-} 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: 0.1s linear;
+}
 
 @media (min-width: 992px) {
   .image {
@@ -572,91 +689,105 @@ footer {
 }
 
 @media (max-width: 900px) {
-  
+
   /* About */
   .featureproject {
     grid-template-columns: 1fr;
   }
 }
+
 @media (max-width: 900px) {
   .top {
     grid-template-columns: auto;
     grid-template-areas:
       "hero"
       "cta1"
-      
-      
+
+
   }
 }
+
 @media screen and (max-width: 576px) {
   .navbar h1 {
     font-size: 20px;
   }
+
   .navbar a:link {
     font-size: 16px;
     padding: 4px;
     border-radius: 20px;
     margin: 5px;
   }
-  
+
   .container {
     padding: 0px;
   }
-  h2{
+
+  h2 {
     font-size: 13px;
   }
-  h3{
+
+  h3 {
     font-size: 10px;
   }
-  p{
+
+  p {
     font-size: 10px;
   }
-  li{
+
+  li {
     font-size: 10px;
   }
+
   .hero {
-    
+
     min-height: 300px;
-  }  
+  }
+
   .name {
     font-size: 30px;
     font-weight: 300;
   }
-  .auto-text h1{
+
+  .auto-text h1 {
     font-size: 20px;
   }
-  .featureproject img
-  {
-    width:100%;
-    height:100%;
+
+  .featureproject img {
+    width: 100%;
+    height: 100%;
   }
-  .btn-container button
-  {
+
+  .btn-container button {
     font-size: 10px;
   }
+
   #myBtn {
-    bottom: 40px; 
+    bottom: 40px;
     right: 20px;
     font-size: 20px;
   }
+
   .featureproject {
-    
-    padding: 7px;    
+
+    padding: 7px;
     grid-template-columns: 1fr;
-    
+
   }
+
   .countdown {
     margin: 8px;
-    
+
   }
+
   .projectimage img {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
   }
-  
+
   .countdown div {
     margin: 0 0px;
     font-size: 1.5em;
-   
+
   }
 }
