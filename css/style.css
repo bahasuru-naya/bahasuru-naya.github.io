@@ -31,21 +31,26 @@ a:link {
 }
 
 .navbar h1 {
-  height: 105px;
+  height: 85px;
   color: #fffafa;
-  font-size: 30px;
+  padding: 3px;;
+  font-size: 23px;
+  margin: 0px;;
+}
+center{
+  margin-top: 3px;
 }
 
 .navbar a:link {
   color: rgb(6, 6, 6);
   background-color: rgb(251, 246, 246);
-  font-size: 25px;
+  font-size: 17px;
   border-radius: 25px;
   padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;  
-  margin: 10px;
-  height: 20px;
+  padding-left: 25px;
+  padding-right: 25px;  
+  margin: 0px 10px;
+ 
 }
 
 .navbar a:visited {
@@ -446,7 +451,7 @@ a:link {
   min-width: none;
   margin: 0 auto;  
   padding: 10px;
-  padding-top: 160px;
+  padding-top: 135px;
   background-color: #000000;
   box-shadow: 0 4px 8px rgba(255, 254, 254, 0.3);
 }
