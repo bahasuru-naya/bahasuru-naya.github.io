@@ -1,7 +1,36 @@
 const preloader = document.querySelector(".preloader");
 window.addEventListener("load", () => {
-  preloader.style.zIndex = "-999";
+  preloader.style.opacity = "0";
+  preloader.style.visibility = "hidden";
+  setTimeout(() => {
+    preloader.style.zIndex = "-999";
+  }, 500);
+  
+  // Initialize reveal animations after load
+  initRevealAnimations();
 });
+
+// Scroll reveal animation
+function initRevealAnimations() {
+  const revealElements = document.querySelectorAll('.descrip, .blog, .featureproject, .section-center, .countdown, .lhe');
+  
+  const revealOnScroll = () => {
+    revealElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (elementTop < windowHeight - 100) {
+        element.classList.add('reveal', 'active');
+      }
+    });
+  };
+  
+  // Initial check
+  revealOnScroll();
+  
+  // Add scroll listener
+  window.addEventListener('scroll', revealOnScroll, { passive: true });
+}
 
 
 
