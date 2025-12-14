@@ -1314,16 +1314,7 @@ marquee h2 {
   border-radius: 2px;
 }
 
-/* Better link styling in content */
-.container a {
-  color: var(--accent-cyan) !important;
-  transition: var(--transition-smooth);
-}
 
-.container a:hover {
-  color: var(--accent-primary) !important;
-  text-shadow: 0 0 15px var(--accent-glow);
-}
 
 /* Improve center text readability */
 center {
