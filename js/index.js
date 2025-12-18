@@ -21,16 +21,22 @@ countersEl.forEach((counterEl) => {
 
 if (document.getElementsByClassName("mySlides").length > 0) {
   let slideIndex = 1;
+  let autoSlideInterval;
   showSlides(slideIndex);
+  startAutoSlide();
 
   // Next/previous controls
   function plusSlides(n) {
+    clearInterval(autoSlideInterval);
     showSlides(slideIndex += n);
+    startAutoSlide();
   }
 
   // Thumbnail image controls
   function currentSlide(n) {
+    clearInterval(autoSlideInterval);
     showSlides(slideIndex = n);
+    startAutoSlide();
   }
 
   function showSlides(n) {
@@ -47,6 +53,13 @@ if (document.getElementsByClassName("mySlides").length > 0) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " activedot";
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      slideIndex++;
+      showSlides(slideIndex);
+    }, 5000); // Change slide every 3 seconds
   }
 }
 
