@@ -1234,6 +1234,8 @@ footer h4 {
   border: 1px solid var(--accent-primary);
   box-shadow: 0 0 40px var(--accent-glow);
   transition: var(--transition-smooth);
+  object-fit: cover;      /* keeps aspect ratio, fills box */
+  object-position: center;
 
 }
 
