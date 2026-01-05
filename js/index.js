@@ -110,7 +110,7 @@ function redirectToCe() {
 
 function downloadcv() {
   // Replace 'destination.html' with the actual URL of the destination page
-  window.location.href = 'https://drive.google.com/file/d/1MZWALP8HdaRIQMyyQQfYvCC7dd5AmCfR/view?usp=sharing';
+  window.location.href = 'https://drive.google.com/file/d/1pkWLeyfHztBT08SRTD-q8zyjBDC5mdgd/view?usp=sharing';
 }
 function visitblog() {
   // Replace 'destination.html' with the actual URL of the destination page
