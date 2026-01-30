@@ -66,7 +66,7 @@ if (document.getElementsByClassName("mySlides").length > 0) {
 
 const containerEl = document.querySelector(".auto-text");
 
-const careers = ["Undergrduate..", "Web Developer..", "Programmer..", "Blogger.."];
+const careers = ["Undergrduate..", "Web Developer..", "Programmer..", "Researcher.."];
 
 let careerIndex = 0;
 
