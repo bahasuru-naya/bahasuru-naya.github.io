@@ -69,6 +69,11 @@ body::before {
   pointer-events: none;
 }
 
+p a{  
+  color: var(--accent-secondary); 
+ 
+}
+
 a:link {
   text-decoration: none;
   transition: var(--transition-smooth);
