@@ -1,32 +1,20 @@
-# 🌟 Bahasuru — Portfolio
+# 🌟 Bahasuru Nayanakantha — Portfolio
 
-Hi! 👋 I’m **Bahasuru** — a passionate developer, tech enthusiast, and creative problem solver.  
-This is my personal portfolio showcasing my **projects**, **skills**, and **experiments** in the world of technology.
+Hi! 👋 I'm **Bahasuru Nayanakantha** — a passionate Computer Engineering undergraduate student, tech enthusiast, and creative problem solver.
+This is my personal portfolio showcasing my **projects**, **skills**, **certifications**, and **experiments** in the world of technology.
 
 ---
 
 ## 🚀 About Me
-- 💻 Full-stack developer with a love for **clean code** and **beautiful UI/UX**.
-- 🎯 Focused on building **practical**, **scalable**, and **impactful** solutions.
-- 📚 Always learning and exploring new tools, frameworks, and ideas.
+- 💻 Computer Engineering undergraduate at General Sir John Kotelawala Defence University with expertise in **software development**, **embedded systems**, and **network configuration**.
+- 🎯 Focused on building **practical**, **scalable**, and **impactful** solutions with **clean code** and attention to detail.
+- 📚 Passionate about learning and exploring new tools, frameworks, and emerging technologies.
+- 🏆 Completed **20+ certifications** in diverse tech domains.
 
 ---
 
-
-## 🛠 Skills & Technologies
-- **Languages:** Python, JavaScript, HTML, CSS, SQL  
-- **Frameworks & Tools:** React, Node.js, Flask, Rasa, OpenCV, TensorFlow  
-- **Other Skills:** UI/UX Design, API Integration, Machine Learning Models
-
----
-
-## 📬 Contact
-Let’s connect and collaborate!
-- 🌐 [Portfolio Website](#)  
-- 📧 Email: yourname@example.com  
-- 🐙 [GitHub](https://github.com/bahasuru-naya) 
-
----
-
-> *"Turning ideas into reality through code and creativity."* ✨
-
+## 📬 Contact & Connect
+Let's connect and collaborate!
+- 📧 **Email:** [p.h.d.bahasuru@gmail.com](mailto:p.h.d.bahasuru@gmail.com)
+- 🐙 **GitHub:** [github.com/bahasuru-naya](https://github.com/bahasuru-naya)
+- 💼 **LinkedIn:** [linkedin.com/in/bahasuru-nayanakantha](https://www.linkedin.com/in/bahasuru-nayanakantha)
