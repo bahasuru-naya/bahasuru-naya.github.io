@@ -34,7 +34,7 @@
             </h1>
             <div class="links">
                 <a href="index.html"><i class="fa-solid fa-house"></i> Home </a> 
-                <a href="projects.html"><i class="fa-solid fa-list-check"></i> Projects </a> 
+                <a href="projects.html" class="projects-link"><i class="fa-solid fa-list-check"></i> Projects <span class="project-badge">0</span></a> 
                 <a href="about.html">  <i class="fa-regular fa-address-card"></i> About </a>
             </div>
         </div>
@@ -560,6 +560,23 @@
         <p>GitHub Repository: <a href="https://github.com/bahasuru-naya/Text-to-mp3" target="_blank">View Source Code</a></p>
         <br>
 
+        <!-- Beautiful Banner for More Projects -->
+        <div class="projects-banner">
+            <div class="banner-content">
+                <h2>Want to see more?</h2>
+                <p>I regularly update my portfolio with new projects and innovations. Explore my complete project collection and contributions on GitHub.</p>
+                <div class="banner-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-plus fa-2x"></i>
+                        <div class="stat-text">More coming soon!</div>
+                    </div>
+                </div>
+                <a href="https://github.com/bahasuru-naya" target="_blank" class="banner-btn">
+                    <i class="fab fa-github"></i> Visit My GitHub Profile
+                </a>
+            </div>
+        </div>
+
     </div>
 
     <footer>
@@ -581,6 +598,23 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+      // Count projects on this page and update navbar badge and banner
+      function updateProjectCountOnPage() {
+        const projectCount = document.querySelectorAll('span#noofproject').length;        
+        // Update navbar badge
+        const navBadge = document.querySelector('.project-badge');
+        if (navBadge) {
+          navBadge.textContent = projectCount + "+";
+        }         
+      }      
+      // Call on page load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateProjectCountOnPage);
+      } else {
+        updateProjectCountOnPage();
+      }
+    </script>
 </body>
 
 </html>

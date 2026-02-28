@@ -32,8 +32,8 @@
                 Bahasuru Nayanakantha
             </h1>
             <div class="links">
-                <a href="index.html"><i class="fa-solid fa-house"></i> Home </a> <a href="projects.html"><i
-                        class="fa-solid fa-list-check"></i> Projects </a> <a href="about.html">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home </a> <a href="projects.html" class="projects-link"><i
+                        class="fa-solid fa-list-check"></i> Projects <span class="project-badge">0</span></a> <a href="about.html">
                     <i class="fa-regular fa-address-card"></i> About </a>
             </div>
         </div>
@@ -66,7 +66,7 @@
             <div class="experience">
                 <div class="stats-container">
                     <i class="fas fa-briefcase fa-3x icon"></i>
-                    <div class="counter" data-ceil="05">15+</div>
+                    <div class="counter" data-ceil="09">9</div>
                     <br>
                     <h4>Technical Projects</h4>
                 </div>
@@ -140,9 +140,9 @@
         </section>
 
         <br>
-        <h3>
-            <center><i class="fa-solid fa-envelope"></i> Email me <br><a
-                    href="mailto:p.h.d.bahasuru@gmail.com">p.h.d.bahasuru@gmail.com</a></center>
+        <h3 style="display: flex; flex-direction: column; align-items: center; font-size: 25px;">
+            <p><i class="fa-solid fa-envelope"></i> Email</p>                  
+            <a id="email" href="mailto:p.h.d.bahasuru@gmail.com">p.h.d.bahasuru@gmail.com</a>
         </h3>
 
         <br>
@@ -169,6 +169,40 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+      // Dynamically count projects from projects.html
+      async function updateProjectCount() {
+        try {
+          const response = await fetch('projects.html');
+          const html = await response.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const projectCount = doc.querySelectorAll('span#noofproject').length;
+          
+          // Update counter in stats
+          const counter = document.querySelector('.stats-container .counter');
+          if (counter) {
+            counter.textContent = projectCount + "+";
+            counter.setAttribute('data-ceil', String(projectCount).padStart(2, '0'));
+          }
+          
+          // Update navbar badge
+          const navBadge = document.querySelector('.project-badge');
+          if (navBadge) {
+            navBadge.textContent = projectCount + "+";
+          }
+        } catch (error) {
+          console.log('Could not fetch project count automatically');
+        }
+      }
+      
+      // Call on page load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateProjectCount);
+      } else {
+        updateProjectCount();
+      }
+    </script>
 </body>
 
 </html>

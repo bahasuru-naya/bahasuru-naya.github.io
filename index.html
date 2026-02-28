@@ -34,8 +34,8 @@
         Bahasuru Nayanakantha
       </h1>
       <div class="links">
-        <a href="index.html"><i class="fa-solid fa-house"></i> Home </a> <a href="projects.html"><i
-            class="fa-solid fa-list-check"></i> Projects </a> <a href="about.html">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home </a> <a href="projects.html" class="projects-link"><i
+            class="fa-solid fa-list-check"></i> Projects <span class="project-badge">0</span></a> <a href="about.html">
           <i class="fa-regular fa-address-card"></i> About </a>
       </div>
     </div>
@@ -83,11 +83,10 @@
         <p class="name">Bahasuru</p>
         <p class="name">Nayanakantha</p>
 
-        <div class="auto-text"></div>
+        <div class="auto-text"></div>        
         
-        <h2 id="h"> "Let's go invent tomorrow </h2>
-        <h2> instead of worrying about what </h2>
-        <h2> happened yesterday." – Steve Jobs </h2>
+        <h2 id="h"> "The best way to predict the </h2>
+        <h2> future is to invent it." – Alan Kay </h2>        
         <br>
         <button id="cv" onclick="downloadcv()" title="View and Download My CV">
           <h3><i class="fa-solid fa-download"></i> View and Download My CV</h3>
@@ -229,6 +228,40 @@
 
   <script src="js/script.js"></script>
   <script src="js/index.js"></script>
+  <script>
+    // Dynamically count projects from projects.html
+    async function updateProjectCount() {
+      try {
+        const response = await fetch('projects.html');
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const projectCount = doc.querySelectorAll('span#noofproject').length;
+        
+        // Update counter in stats
+        const counter = document.querySelector('.stats-container .counter');
+        if (counter) {
+          counter.textContent = projectCount;
+          counter.setAttribute('data-ceil', String(projectCount).padStart(2, '0'));
+        }
+        
+        // Update navbar badge
+        const navBadge = document.querySelector('.project-badge');
+        if (navBadge) {
+          navBadge.textContent = projectCount + "+";
+        }
+      } catch (error) {
+        console.log('Could not fetch project count automatically');
+      }
+    }
+    
+    // Call on page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateProjectCount);
+    } else {
+      updateProjectCount();
+    }
+  </script>
 </body>
 
 </html>
