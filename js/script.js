@@ -92,7 +92,7 @@ function initGalaxyStars() {
 
   // Create stars
   const stars = [];
-  const starCount = Math.min(500, Math.floor((canvas.width * canvas.height) / 3000));
+  const starCount = Math.min(250, Math.floor((canvas.width * canvas.height) / 3000));
 
   for (let i = 0; i < starCount; i++) {
     stars.push(new Star());
@@ -255,7 +255,7 @@ window.onscroll = function () { scrollFunction() };
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
-    if (nav[0]) nav[0].style.backdropFilter = "blur(20px)";
+    if (nav[0]) nav[0].style.backdropFilter = "blur(30px)";
   } else {
     mybutton.style.display = "none";
     if (nav[0]) nav[0].style.backdropFilter = "blur(1px)";
