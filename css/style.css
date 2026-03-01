@@ -672,54 +672,68 @@ button {
 
 .lhe h2 #noofproject {
   color:rgb(0, 0, 0);
-  background-color: #ffffff;
-  border: #ffffff solid 3px;
-  border-radius: 20px;  
-  font-weight: 500;  
-  padding: 0px 1vw;
-  align-items: end;
+  background-color: #ffffff; 
+  border-radius: 20px;
+  align-self: stretch; /* This forces it to fill the parent's height */
+  height: auto;        /* Removes 'initial' which can sometimes be restrictive */
+  display: flex;       /* Use flex to keep the text inside centered */
+  align-items: center; 
+  justify-content: center;
+  padding: 0px 1vw; 
+  font-weight: 500;   
+ 
+  
 }
 .lhe h2 #titlep {
   color: var(--text-primary); 
   background-color: var(--bg-primary);
   border: #8b5cf6 solid 3px;
-  margin: 0 0.25vw 0 0.5vw;
+  margin: 0 0.25vw; ;
   border-radius: 20px;
+  align-self: stretch; 
+  height: auto;        
+  display: flex;      
+  align-items: center; 
+  justify-content: center;
+  padding: 0px 1vw; 
   font-weight: 500; 
-  padding: 0px 1vw;
-  max-width: 50vw;  
-  align-items: end;
+  max-width: 40vw;
 }
 
 .lhe h2 #typetext {
   background-color: var(--accent-cyan);
-  color: rgb(0, 0, 0);
-  font-size: small;
-  border-radius: 10px;  
-  font-weight: 500;  
-  padding: 0px 5px 0px 5px;
-  align-self: start;
+  color: rgb(0, 0, 0);  
+  border-radius: 20px;
+  align-self: stretch; 
+  height: auto;        
+  display: flex;       
+  align-items: center; 
+  justify-content: center;
+  padding: 0px 1vw; 
+  font-weight: 500; 
 }
 
 .lhe h2::before{
   display: block;
-  margin-right: 0.5vw;
+  margin-right: -0.5vw;
   grid-column: 1;  
   content: "";
   height: 3px;
   background: var(--gradient-primary);
   border-radius: 3px;
   box-shadow: 0 0 15px var(--accent-glow);
+  z-index: -1;
 }
 .lhe h2::after {
   display: block;
-  margin-left: 0.5vw;
+  margin-left: -0.5vw;
   grid-column: 5;
   content: "";
   height: 3px;
   background: var(--gradient-primary);
   border-radius: 3px;
   box-shadow: 0 0 15px var(--accent-glow);
+  z-index: -1;
 }
 
 .lhe h2:after {
