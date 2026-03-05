@@ -7,11 +7,15 @@ window.addEventListener("load", () => {
     preloader.style.display = "none";
   }, 500);
 
+  // Initialize custom mouse cursor
+  initCustomCursor();
+
   // Initialize reveal animations after load
   initRevealAnimations();
 
   // Initialize galaxy star field
   initGalaxyStars();
+
 });
 
 // ─── Galaxy Star Field Animation ────────────────────────────────────────────
@@ -235,4 +239,91 @@ window.addEventListener('scroll', () => {
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── Custom Animated Mouse Pointer ────────────────────────────────────────────
+function initCustomCursor() {
+  // Only initialize on devices with a fine pointer (like a mouse)
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+
+  const dot = document.createElement('div');
+  dot.classList.add('custom-cursor-dot');
+
+  const ring = document.createElement('div');
+  ring.classList.add('custom-cursor-ring');
+
+  document.body.appendChild(dot);
+  document.body.appendChild(ring);
+  document.body.classList.add('has-custom-cursor');
+
+  // Hide initially until the first mouse movement
+  dot.style.opacity = '0';
+  ring.style.opacity = '0';
+  let hasMoved = false;
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let ringX = mouseX;
+  let ringY = mouseY;
+
+  window.addEventListener('mousemove', (e) => {
+    if (!hasMoved) {
+      hasMoved = true;
+      dot.style.opacity = '1';
+      ring.style.opacity = '1';
+      // Snap ring immediately to first position
+      ringX = e.clientX;
+      ringY = e.clientY;
+    }
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  // Hide when mouse leaves the document, show when it returns
+  document.addEventListener('mouseleave', () => {
+    dot.style.opacity = '0';
+    ring.style.opacity = '0';
+  });
+
+  document.addEventListener('mouseenter', () => {
+    if (hasMoved) {
+      dot.style.opacity = '1';
+      ring.style.opacity = '1';
+    }
+  });
+
+  // Handle mousedown/mouseup for click effect
+  window.addEventListener('mousedown', () => ring.classList.add('clicked'));
+  window.addEventListener('mouseup', () => ring.classList.remove('clicked'));
+
+  // Optimize animation with requestAnimationFrame
+  function renderCursor() {
+    // Dot follows instantly
+    dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+
+    // Ring follows with easing (lerp)
+    ringX += (mouseX - ringX) * 0.3;
+    ringY += (mouseY - ringY) * 0.3;
+    ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+
+    requestAnimationFrame(renderCursor);
+  }
+  requestAnimationFrame(renderCursor);
+
+  // Event delegation for hover states on interactive elements
+  const interactiveSelector = 'a, button, input, textarea, .projectimage img, .social-icon, .tabs div';
+
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest(interactiveSelector)) {
+      dot.classList.add('hovered');
+      ring.classList.add('hovered');
+    }
+  });
+
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest(interactiveSelector)) {
+      dot.classList.remove('hovered');
+      ring.classList.remove('hovered');
+    }
+  });
 }

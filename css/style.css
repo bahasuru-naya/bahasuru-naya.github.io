@@ -2087,3 +2087,73 @@ center {
     justify-content: center;
   }
 }
+
+/* =========================================================================
+   Custom Animated Mouse Pointer
+   ========================================================================= */
+@media (pointer: fine) {
+
+  /* Only apply to devices with an actual mouse to avoid touch-device bugs */
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: none !important;
+  }
+
+  .custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    z-index: 999999;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #ffffff;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+  }
+
+  .custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    z-index: 999998;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      background-color 0.3s,
+      border-color 0.3s,
+      opacity 0.2s;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+  }
+
+  /* Hover states for interactive elements */
+  .custom-cursor-dot.hovered {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px #ffffff;
+  }
+
+  .custom-cursor-ring.hovered {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(99, 102, 241, 0.08);
+    border-color: #ffffff;
+    box-shadow: 0 0 25px #ffffff;
+  }
+
+  /* Click state */
+  .custom-cursor-ring.clicked {
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff;
+    border-color:#ffffff;
+  }
+}
