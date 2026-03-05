@@ -369,7 +369,7 @@ button {
   align-items: center;
   gap: 10px;
   padding: 12px 28px;
-  background: linear-gradient(90deg, #8b5cf6 0%, #020202 10%,#0c0c0c 90%, #8b5cf6  100%);
+  background: linear-gradient(90deg, #8b5cf6 0%, #020202 10%, #0c0c0c 90%, #8b5cf6 100%);
   color: #8b5cf6 !important;
   border: 3px solid rgba(99, 102, 241, 0.45);
   border-radius: 8px;
@@ -403,7 +403,7 @@ button {
 
 /* Live demo variant (cyan accent) */
 .repo-btn--live {
-  background: linear-gradient(90deg, #22d3ee 0%, #020202 10%,#0c0c0c 90%, #22d3ee 100%);
+  background: linear-gradient(90deg, #22d3ee 0%, #020202 10%, #0c0c0c 90%, #22d3ee 100%);
   border-color: rgba(34, 211, 238, 0.4);
   color: #22d3ee !important;
 }
@@ -1318,27 +1318,109 @@ footer h4 {
 
 .socialmenu {
   background: transparent;
+  margin: 10px 0;
 }
 
 .socialmenu ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
 }
 
 .socialmenu ul li {
-  display: inline;
+  display: inline-flex;
 }
 
 .socialmenu ul li a {
   background: transparent;
+  text-decoration: none;
+  display: inline-flex;
 }
 
 .socialmenu ul li a:hover {
   background: transparent;
 }
 
+/* Social icon circle */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.75);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* Facebook */
+.social-icon--facebook::before {
+  background: radial-gradient(circle at center, rgba(24, 119, 242, 0.35), transparent 70%);
+}
+
+.social-icon--facebook:hover,
+.socialmenu ul li a:hover .social-icon--facebook {
+  border-color: #1877f2;
+  color: #1877f2;
+  box-shadow: 0 0 18px rgba(24, 119, 242, 0.5), 0 6px 20px rgba(24, 119, 242, 0.25);
+  transform: translateY(-4px) scale(1.1);
+}
+
+.socialmenu ul li a:hover .social-icon--facebook::before {
+  opacity: 1;
+}
+
+/* GitHub */
+.social-icon--github::before {
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.35), transparent 70%);
+}
+
+.socialmenu ul li a:hover .social-icon--github {
+  border-color: #a78bfa;
+  color: #a78bfa;
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.5), 0 6px 20px rgba(139, 92, 246, 0.25);
+  transform: translateY(-4px) scale(1.1);
+}
+
+.socialmenu ul li a:hover .social-icon--github::before {
+  opacity: 1;
+}
+
+/* LinkedIn */
+.social-icon--linkedin::before {
+  background: radial-gradient(circle at center, rgba(10, 102, 194, 0.35), transparent 70%);
+}
+
+.socialmenu ul li a:hover .social-icon--linkedin {
+  border-color: #0a66c2;
+  color: #0a66c2;
+  box-shadow: 0 0 18px rgba(10, 102, 194, 0.5), 0 6px 20px rgba(10, 102, 194, 0.25);
+  transform: translateY(-4px) scale(1.1);
+}
+
+.socialmenu ul li a:hover .social-icon--linkedin::before {
+  opacity: 1;
+}
+
+/* Keep old img rules harmless if any linger */
 .socialmenu ul li a img {
   border-radius: 50%;
   border: 2px solid var(--border-color);
@@ -1352,6 +1434,7 @@ footer h4 {
   box-shadow: 0 10px 30px var(--accent-glow);
   filter: grayscale(0%);
 }
+
 
 .preloader {
   position: fixed;

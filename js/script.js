@@ -2,9 +2,9 @@ const preloader = document.querySelector(".preloader");
 window.addEventListener("load", () => {
   preloader.style.opacity = "0";
 
-  setTimeout(() => {    
+  setTimeout(() => {
     preloader.style.visibility = "hidden";
-    preloader.style.display = "none";    
+    preloader.style.display = "none";
   }, 500);
 
   // Initialize reveal animations after load
@@ -14,115 +14,108 @@ window.addEventListener("load", () => {
   initGalaxyStars();
 });
 
-// Galaxy Star Field Animation
+// ─── Galaxy Star Field Animation ────────────────────────────────────────────
 function initGalaxyStars() {
   const canvas = document.getElementById('galaxy-canvas');
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
+  let animationId = null;
+  let isVisible = true;
 
-  // Set canvas size
+  // ── Resize: debounced via rAF to avoid thrashing ──
+  let resizePending = false;
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    if (resizePending) return;
+    resizePending = true;
+    requestAnimationFrame(() => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      resizePending = false;
+    });
   }
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  window.addEventListener('resize', resizeCanvas, { passive: true });
 
-  // Star class
+  // ── Pause when tab is hidden (saves CPU/GPU) ──
+  document.addEventListener('visibilitychange', () => {
+    isVisible = !document.hidden;
+    if (isVisible && !animationId) animate();
+  });
+
+  // ── Star class ──
+  // Pre-compute colors as strings to avoid repeated template literals in hot loop
+  const COLORS = [
+    'rgba(255,255,255,',   // white  – 50 %
+    'rgba(99,102,241,',    // indigo – 25 %
+    'rgba(139,92,246,',    // purple – 15 %
+    'rgba(34,211,238,',    // cyan   – 10 %
+  ];
+
   class Star {
-    constructor() {
-      this.reset();
-      this.y = Math.random() * canvas.height;
+    constructor(randomY = true) {
+      this.reset(randomY);
     }
 
-    reset() {
+    reset(randomY = false) {
       this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2.5 + 0.5;
+      this.y = randomY ? Math.random() * canvas.height : Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 0.5;
       this.speedY = Math.random() * 0.2 - 0.05;
       this.speedX = Math.random() * 0.2 - 0.05;
 
-      // Color variations matching theme
-      const colorType = Math.random();
-      if (colorType < 0.5) {
-        this.color = `rgba(255, 255, 255, ${Math.random() * 0.6 + 0.6})`;
-      } else if (colorType < 0.75) {
-        this.color = `rgba(99, 102, 241, ${Math.random() * 0.6 + 0.5})`; // indigo
-      } else if (colorType < 0.9) {
-        this.color = `rgba(139, 92, 246, ${Math.random() * 0.6 + 0.5})`; // purple
-      } else {
-        this.color = `rgba(34, 211, 238, ${Math.random() * 0.6 + 0.5})`; // cyan
-      }
-
+      const r = Math.random();
+      const base = r < 0.5 ? COLORS[0] : r < 0.75 ? COLORS[1] : r < 0.9 ? COLORS[2] : COLORS[3];
+      this.baseColor = base;
       this.opacity = Math.random() * 0.4 + 0.7;
-      this.twinkleSpeed = Math.random() * 0.06 + 0.01;
-      this.twinkleDirection = Math.random() > 0.5 ? 1 : -1;
+      this.twinkleSpeed = Math.random() * 0.04 + 0.01;
+      this.twinkleDir = Math.random() > 0.5 ? 1 : -1;
     }
 
     update() {
       this.y += this.speedY;
       this.x += this.speedX;
-
-      // Twinkle effect
-      this.opacity += this.twinkleSpeed * this.twinkleDirection;
-      if (this.opacity <= 0.5 || this.opacity >= 1) {
-        this.twinkleDirection *= -1;
-      }
-
-      // Reset if out of bounds
-      if (this.y < 0 || this.y > canvas.height || this.x < 0 || this.x > canvas.width) {
-        this.reset();
-      }
+      this.opacity += this.twinkleSpeed * this.twinkleDir;
+      if (this.opacity <= 0.5 || this.opacity >= 1) this.twinkleDir *= -1;
+      if (this.y < 0 || this.y > canvas.height || this.x < 0 || this.x > canvas.width) this.reset();
     }
 
     draw() {
-      ctx.save();
       ctx.globalAlpha = this.opacity;
-      ctx.fillStyle = this.color;
-      ctx.shadowBlur = this.size * 4;
-      ctx.shadowColor = this.color;
-
+      ctx.fillStyle = this.baseColor + '1)';
+      // shadowBlur only on larger stars to cut overdraw cost
+      if (this.size > 1.5) {
+        ctx.shadowBlur = this.size * 3;
+        ctx.shadowColor = this.baseColor + '0.8)';
+      } else {
+        ctx.shadowBlur = 0;
+      }
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fill();
-      ctx.restore();
     }
   }
 
-  // Create stars
-  const stars = [];
-  const starCount = Math.min(250, Math.floor((canvas.width * canvas.height) / 3000));
+  // ── Create stars ──
+  const starCount = Math.min(220, Math.floor((canvas.width * canvas.height) / 3500));
+  const stars = Array.from({ length: starCount }, () => new Star(true));
 
-  for (let i = 0; i < starCount; i++) {
-    stars.push(new Star());
-  }
-
-  // Shooting Star class
+  // ── Shooting Star class ──
   class ShootingStar {
-    constructor() {
-      this.reset();
-    }
+    constructor() { this.reset(); }
 
     reset() {
-      // Start from top-right, move diagonally down-left
       this.x = Math.random() * canvas.width + canvas.width * 0.5;
       this.y = Math.random() * canvas.height * 0.3 - 100;
-      this.length = Math.random() * 120 + 100;
-      this.speed = Math.random() * 3 + 5;
-      this.size = Math.random() * 2 + 1.5;
-      this.angle = Math.random() * 0.5 + 0.5; // Diagonal angle
+      this.length = Math.random() * 120 + 80;
+      this.speed = Math.random() * 3 + 4;
+      this.size = Math.random() * 1.5 + 1.2;
+      this.angle = Math.random() * 0.5 + 0.5;
 
-      // Color variations
-      const colorType = Math.random();
-      if (colorType < 0.4) {
-        this.color = 'rgba(255, 255, 255, 1)';
-      } else if (colorType < 0.7) {
-        this.color = 'rgba(99, 102, 241, 1)';
-      } else {
-        this.color = 'rgba(139, 92, 246, 1)';
-      }
-
+      const r = Math.random();
+      this.color = r < 0.4 ? 'rgba(255,255,255,1)' : r < 0.7 ? 'rgba(99,102,241,1)' : 'rgba(139,92,246,1)';
+      this.colorBase = this.color.slice(0, -2); // strip trailing '1)'
       this.opacity = Math.random() * 0.3 + 0.7;
       this.trailOpacity = this.opacity * 0.85;
     }
@@ -130,48 +123,36 @@ function initGalaxyStars() {
     update() {
       this.x -= Math.cos(this.angle) * this.speed;
       this.y += Math.sin(this.angle) * this.speed;
-      this.opacity -= 0.008;
-      this.trailOpacity -= 0.008;
+      this.opacity -= 0.009;
+      this.trailOpacity -= 0.009;
     }
 
     draw() {
       if (this.opacity <= 0) return;
-
       ctx.save();
 
-      // Draw tail
-      const gradient = ctx.createLinearGradient(
-        this.x,
-        this.y,
-        this.x + Math.cos(this.angle) * this.length,
-        this.y - Math.sin(this.angle) * this.length
-      );
-
-      gradient.addColorStop(0, this.color.replace('1)', this.opacity + ')'));
-      gradient.addColorStop(0.5, this.color.replace('1)', this.trailOpacity * 0.5 + ')'));
-      gradient.addColorStop(1, this.color.replace('1)', '0)'));
+      const tx = this.x + Math.cos(this.angle) * this.length;
+      const ty = this.y - Math.sin(this.angle) * this.length;
+      const gradient = ctx.createLinearGradient(this.x, this.y, tx, ty);
+      gradient.addColorStop(0, this.colorBase + this.opacity + ')');
+      gradient.addColorStop(0.5, this.colorBase + (this.trailOpacity * 0.5) + ')');
+      gradient.addColorStop(1, this.colorBase + '0)');
 
       ctx.strokeStyle = gradient;
       ctx.lineWidth = this.size;
       ctx.lineCap = 'round';
-
       ctx.beginPath();
       ctx.moveTo(this.x, this.y);
-      ctx.lineTo(
-        this.x + Math.cos(this.angle) * this.length,
-        this.y - Math.sin(this.angle) * this.length
-      );
+      ctx.lineTo(tx, ty);
       ctx.stroke();
 
-      // Draw bright head
       ctx.globalAlpha = this.opacity;
       ctx.fillStyle = this.color;
-      ctx.shadowBlur = 20;
+      ctx.shadowBlur = 15;
       ctx.shadowColor = this.color;
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
+      ctx.arc(this.x, this.y, this.size * 1.8, 0, Math.PI * 2);
       ctx.fill();
-
       ctx.restore();
     }
 
@@ -180,98 +161,78 @@ function initGalaxyStars() {
     }
   }
 
-  // Shooting stars array
   const shootingStars = [];
-  let lastShootingStarTime = Date.now();
-  const shootingStarInterval = 2000; // New shooting star every 2-4 seconds
+  let lastShootingStarTime = 0;
 
-  function spawnShootingStar() {
-    const now = Date.now();
-    if (now - lastShootingStarTime > shootingStarInterval + Math.random() * 2000) {
+  function spawnShootingStar(now) {
+    if (now - lastShootingStarTime > 2000 + Math.random() * 2000) {
       shootingStars.push(new ShootingStar());
       lastShootingStarTime = now;
     }
   }
 
-  // Animation loop
-  function animate() {
+  // ── Animation loop ──
+  function animate(now = 0) {
+    if (!isVisible) { animationId = null; return; }
+    animationId = requestAnimationFrame(animate);
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    stars.forEach(star => {
-      star.update();
-      star.draw();
-    });
+    // Batch all stars in a single save/restore
+    ctx.save();
+    for (let i = 0; i < stars.length; i++) {
+      stars[i].update();
+      stars[i].draw();
+    }
+    ctx.restore();
 
-    // Spawn and update shooting stars
-    spawnShootingStar();
+    ctx.globalAlpha = 1;
+    ctx.shadowBlur = 0;
 
+    spawnShootingStar(now);
     for (let i = shootingStars.length - 1; i >= 0; i--) {
       shootingStars[i].update();
       shootingStars[i].draw();
-
-      // Remove off-screen shooting stars
-      if (shootingStars[i].isOffScreen()) {
-        shootingStars.splice(i, 1);
-      }
+      if (shootingStars[i].isOffScreen()) shootingStars.splice(i, 1);
     }
-
-    requestAnimationFrame(animate);
   }
 
   animate();
 }
 
-// Scroll reveal animation
+// ─── Scroll Reveal (IntersectionObserver – zero scroll jank) ────────────────
 function initRevealAnimations() {
-  const revealElements = document.querySelectorAll('.descrip, .blog, .featureproject, .section-center, .countdown, .lhe');
+  const elements = document.querySelectorAll('.descrip, .blog, .featureproject, .section-center, .countdown, .lhe');
+  if (!elements.length) return;
 
-  const revealOnScroll = () => {
-    revealElements.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-
-      if (elementTop < windowHeight - 100) {
-        element.classList.add('reveal', 'active');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal', 'active');
+        observer.unobserve(entry.target); // fire once and stop watching
       }
     });
-  };
+  }, { threshold: 0.1 });
 
-  // Initial check
-  revealOnScroll();
-
-  // Add scroll listener
-  window.addEventListener('scroll', revealOnScroll, { passive: true });
+  elements.forEach(el => observer.observe(el));
 }
 
+// ─── Scroll-to-top button & navbar blur (throttled via rAF) ─────────────────
+const mybutton = document.getElementById("myBtn");
+const nav = document.getElementsByClassName("navbar");
+let scrollTicking = false;
 
-
-// Get the button:
-let mybutton = document.getElementById("myBtn");
-let nav = document.getElementsByClassName("navbar");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () { scrollFunction() };
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-    if (nav[0]) nav[0].style.backdropFilter = "blur(30px)";
-  } else {
-    mybutton.style.display = "none";
-    if (nav[0]) nav[0].style.backdropFilter = "blur(1px)";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+window.addEventListener('scroll', () => {
+  if (scrollTicking) return;
+  scrollTicking = true;
+  requestAnimationFrame(() => {
+    const scrolled = document.documentElement.scrollTop > 20;
+    if (mybutton) mybutton.style.display = scrolled ? "block" : "none";
+    if (nav[0]) nav[0].style.backdropFilter = scrolled ? "blur(30px)" : "blur(1px)";
+    scrollTicking = false;
+  });
+}, { passive: true });
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-
-
-
