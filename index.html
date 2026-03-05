@@ -34,8 +34,9 @@
         Bahasuru Nayanakantha
       </h1>
       <div class="links">
-        <a href="index.html"><i class="fa-solid fa-house"></i> Home </a> <a href="projects.html" class="projects-link"><i
-            class="fa-solid fa-list-check"></i> Projects <span class="project-badge">0</span></a> <a href="about.html">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home </a> <a href="projects.html"
+          class="projects-link"><i class="fa-solid fa-list-check"></i> Projects <span class="project-badge">0</span></a>
+        <a href="about.html">
           <i class="fa-regular fa-address-card"></i> About </a>
       </div>
     </div>
@@ -83,10 +84,10 @@
         <p class="name">Bahasuru</p>
         <p class="name">Nayanakantha</p>
 
-        <div class="auto-text"></div>        
-        
+        <div class="auto-text"></div>
+
         <h2 id="h"> "The best way to predict the </h2>
-        <h2> future is to invent it." – Alan Kay </h2>        
+        <h2> future is to invent it." – Alan Kay </h2>
         <br>
         <button id="cv" onclick="downloadcv()" title="View and Download My CV">
           <h3><i class="fa-solid fa-download"></i> View and Download My CV</h3>
@@ -101,8 +102,9 @@
 
     <br>
     <div class="descrip">
-      <h2>Welcome to My Portfolio. I'm Bahasuru Nayanakantha, a dedicated Computer Engineering undergraduate with a strong focus on software development, electronics, and
-        problem-solving. Explore my journey, technical expertise, and the projects that define my commitment to
+      <h2>Welcome to my portfolio! I'm Bahasuru Nayanakantha, a dedicated Computer Engineering undergraduate with a
+        strong focus on software development, electronics, and
+        problem-solving. Explore my journey, technical expertise, and the projects that reflect my commitment to
         excellence.</h2>
     </div>
 
@@ -127,28 +129,28 @@
           <!-- single item -->
           <div class="content live" id="step1">
             <h3>Experience</h3>
-           
-              <p>As a Computer Engineering undergraduate, I have actively applied my technical knowledge through 
-                hands-on projects involving software development, embedded systems, and network configuration. I excel
-                at troubleshooting complex systems, optimizing performance, and building cross-platform solutions.</p>
-           
+
+            <p>As a Computer Engineering undergraduate, I have actively applied my technical knowledge through
+              hands-on projects involving software development, embedded systems, and network configuration. I excel
+              at troubleshooting complex systems, optimizing performance, and building cross-platform solutions.</p>
+
             <button onclick="redirectToex()" id="cvbtn" title="more info">
-                <h3><i class="fa-solid fa-circle-info"></i> More info</h3>
-              </button>
+              <h3><i class="fa-solid fa-circle-info"></i> More info</h3>
+            </button>
             <br>
           </div>
           <!-- end of single item -->
           <!-- single item -->
           <div class="content" id="step2">
             <h3>Education</h3>
-           
-              <p>Currently pursuing a Bachelor's degree in Computer Engineering at General Sir John Kotelawala Defence
-                University. My academic journey is a continuous exploration of high-performance computing, circuit
-                design, and algorithmic optimization, aimed at solving real-world challenges through technology.</p>
-           
+
+            <p>Currently pursuing a Bachelor's degree in Computer Engineering at General Sir John Kotelawala Defence
+              University. My academic journey is a continuous exploration of high-performance computing, circuit
+              design, and algorithmic optimization, aimed at solving real-world challenges through technology.</p>
+
             <button onclick="redirectToEd()" id="cvbtn" title="more info">
-                <h3><i class="fa-solid fa-circle-info"></i> More info</h3>
-              </button>
+              <h3><i class="fa-solid fa-circle-info"></i> More info</h3>
+            </button>
             <br>
           </div>
           <!-- end of single item -->
@@ -165,8 +167,8 @@
               <li>Certificate course in Introduction to IoT </li>
             </ul>
             <button onclick="redirectToCe()" id="cvbtn" title="more info">
-                <h3><i class="fa-solid fa-circle-info"></i> More info</h3>
-              </button>
+              <h3><i class="fa-solid fa-circle-info"></i> More info</h3>
+            </button>
             <br>
 
           </div>
@@ -181,12 +183,11 @@
     <section class="featureproject">
       <img src="image/1693661967395_denoise.jpeg" width="360" height="250" alt="Project">
       <div>
-        <h1>FEATURE PROJECT </h1>
-        <h2> Line-following robot using Arduino</h2>
-        <p>A line-following robot is a type of autonomous robot that is capable of tracking and following a line or path
-          on the ground. These robots are commonly used in various applications such as industrial automation,
-          logistics, and hobby projects. They typically consist of a chassis, wheels, motors, sensors, and a
-          microcontroller for processing. </p>
+        <h1>FEATURE PROJECT</h1>
+        <h2>Line-Following Robot Using Arduino</h2>
+        <p>A line-following robot is an autonomous robot capable of tracking and following a line or path on the
+          ground. These robots are widely used in industrial automation, logistics, and hobby projects. They
+          typically consist of a chassis, wheels, motors, sensors, and a microcontroller for processing.</p>
         <br>
 
         <a href="projects.html"> <i class="fa-solid fa-circle-info"></i> Learn more </a>
@@ -237,14 +238,14 @@
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         const projectCount = doc.querySelectorAll('span#noofproject').length;
-        
+
         // Update counter in stats
         const counter = document.querySelector('.stats-container .counter');
         if (counter) {
           counter.textContent = projectCount;
           counter.setAttribute('data-ceil', String(projectCount).padStart(2, '0'));
         }
-        
+
         // Update navbar badge
         const navBadge = document.querySelector('.project-badge');
         if (navBadge) {
@@ -254,7 +255,7 @@
         console.log('Could not fetch project count automatically');
       }
     }
-    
+
     // Call on page load
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', updateProjectCount);

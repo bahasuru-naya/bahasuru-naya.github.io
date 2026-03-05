@@ -346,6 +346,8 @@ button {
 }
 
 .projectimage img {
+  display: block;
+  margin: 0 auto;
   border: 1px solid var(--border-color);
   border-radius: 16px;
   transition: var(--transition-smooth);
@@ -356,6 +358,63 @@ button {
   transform: scale(1.02);
   box-shadow: var(--shadow-glow);
 }
+
+/* GitHub Repository Button */
+.repo-btn-wrap {
+  margin: 20px 0 10px;
+}
+
+.repo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #8b5cf6 0%, #020202 10%,#0c0c0c 90%, #8b5cf6  100%);
+  color: #8b5cf6 !important;
+  border: 3px solid rgba(99, 102, 241, 0.45);
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 0 0 rgba(99, 102, 241, 0);
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  border-radius: 8px !important;
+  padding: 12px 28px !important;
+  margin-top: 0 !important;
+  font-size: 15px !important;
+}
+
+.repo-btn i {
+  font-size: 18px;
+}
+
+.repo-btn:hover {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-color: rgba(139, 92, 246, 0.8);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.45), 0 0 0 1px rgba(99, 102, 241, 0.3);
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+/* Live demo variant (cyan accent) */
+.repo-btn--live {
+  background: linear-gradient(90deg, #22d3ee 0%, #020202 10%,#0c0c0c 90%, #22d3ee 100%);
+  border-color: rgba(34, 211, 238, 0.4);
+  color: #22d3ee !important;
+}
+
+.repo-btn--live:hover {
+  background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
+  border-color: rgba(34, 211, 238, 0.8);
+  color: #fff !important;
+  box-shadow: 0 8px 25px rgba(34, 211, 238, 0.4), 0 0 0 1px rgba(34, 211, 238, 0.3);
+}
+
 
 .auto-text {
   margin: 15px 0;
@@ -985,6 +1044,10 @@ button {
   line-height: 1.6;
 }
 
+#aboutintro {
+  text-align: center;
+}
+
 .container h3 {
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
@@ -1110,7 +1173,7 @@ button {
 .content ul,
 .content li {
   color: rgba(255, 255, 255, 0.85) !important;
-  
+
   line-height: 1.8;
 }
 
@@ -1394,15 +1457,15 @@ footer h4 {
 }
 
 #dp {
+  display: block;
+  margin: 0 auto;
   border-radius: 100%;
   padding: 0px;
   border: 1px solid var(--accent-primary);
   box-shadow: 0 0 40px var(--accent-glow);
   transition: var(--transition-smooth);
   object-fit: cover;
-  /* keeps aspect ratio, fills box */
   object-position: center;
-
 }
 
 @media (min-width: 992px) {
