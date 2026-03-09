@@ -2088,6 +2088,93 @@ center {
   }
 }
 
+/* Skills Section Styles */
+.skills-container {
+  padding: 20px 0;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.skill-card {
+  background: rgba(20, 20, 30, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 30px;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.skill-card h4 {
+  color: var(--accent-cyan) !important;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 5px 0;
+}
+
+.skill-card h4 i {
+  font-size: 1.4rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tag {
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-tag:hover {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px var(--accent-glow);
+}
+
+.skill-tag i {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* =========================================================================
    Custom Animated Mouse Pointer
    ========================================================================= */
@@ -2154,6 +2241,6 @@ center {
     width: 25px;
     height: 25px;
     background-color: #ffffff;
-    border-color:#ffffff;
+    border-color: #ffffff;
   }
 }
