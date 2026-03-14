@@ -369,12 +369,12 @@ button {
   align-items: center;
   gap: 10px;
   padding: 12px 28px;
-  background: linear-gradient(90deg, #8b5cf6 0%, #020202 10%, #0c0c0c 90%, #8b5cf6 100%);
-  color: #8b5cf6 !important;
+  background:  #8b5cf6 !important; ;
+  color: #000000 !important;
   border: 3px solid rgba(99, 102, 241, 0.45);
   border-radius: 8px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.4px;
   text-decoration: none !important;
   cursor: pointer;
@@ -397,21 +397,21 @@ button {
   border-color: rgba(139, 92, 246, 0.8);
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(99, 102, 241, 0.45), 0 0 0 1px rgba(99, 102, 241, 0.3);
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
+  color: #000000 ;
+  -webkit-text-fill-color: #000000 !important;
 }
 
 /* Live demo variant (cyan accent) */
 .repo-btn--live {
-  background: linear-gradient(90deg, #22d3ee 0%, #020202 10%, #0c0c0c 90%, #22d3ee 100%);
+  background:  #22d3ee !important;
   border-color: rgba(34, 211, 238, 0.4);
-  color: #22d3ee !important;
+  color: #000000 !important;
 }
 
 .repo-btn--live:hover {
   background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
   border-color: rgba(34, 211, 238, 0.8);
-  color: #fff !important;
+  color: #000000 !important;
   box-shadow: 0 8px 25px rgba(34, 211, 238, 0.4), 0 0 0 1px rgba(34, 211, 238, 0.3);
 }
 
