@@ -15,6 +15,7 @@ window.addEventListener("load", () => {
 
   // Initialize galaxy star field
   initGalaxyStars();
+  
 
 });
 

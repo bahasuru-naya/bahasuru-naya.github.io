@@ -1,4 +1,4 @@
-// ─── Counter Animations (rAF-based, smooth 60fps) ───────────────────────────
+// ─── Counter Animations  ───────────────────────────
 const countersEl = document.querySelectorAll(".counter");
 
 countersEl.forEach((counterEl) => {
@@ -22,47 +22,6 @@ countersEl.forEach((counterEl) => {
   requestAnimationFrame(animateCounter);
 });
 
-// ─── Image Slideshow ─────────────────────────────────────────────────────────
-if (document.getElementsByClassName("mySlides").length > 0) {
-  let slideIndex = 1;
-  let autoSlideInterval;
-  showSlides(slideIndex);
-  startAutoSlide();
-
-  function plusSlides(n) {
-    clearInterval(autoSlideInterval);
-    showSlides(slideIndex += n);
-    startAutoSlide();
-  }
-
-  function currentSlide(n) {
-    clearInterval(autoSlideInterval);
-    showSlides(slideIndex = n);
-    startAutoSlide();
-  }
-
-  function showSlides(n) {
-    const slides = document.getElementsByClassName("mySlides");
-    const dots = document.getElementsByClassName("dot");
-    if (n > slides.length) slideIndex = 1;
-    if (n < 1) slideIndex = slides.length;
-    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-    for (let i = 0; i < dots.length; i++) dots[i].className = dots[i].className.replace(" activedot", "");
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " activedot";
-  }
-
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(() => {
-      slideIndex++;
-      showSlides(slideIndex);
-    }, 5000);
-  }
-
-  // Expose controls globally (called from HTML onclick)
-  window.plusSlides = plusSlides;
-  window.currentSlide = currentSlide;
-}
 
 // ─── Typing / Auto-text Animation ────────────────────────────────────────────
 const containerEl = document.querySelector(".auto-text");
@@ -98,7 +57,6 @@ function redirectToex() { window.location.href = 'about.html#ex'; }
 function redirectToEd() { window.location.href = 'about.html#ed'; }
 function redirectToCe() { window.location.href = 'about.html#ce'; }
 function downloadcv() { window.location.href = 'https://drive.google.com/file/d/1pkWLeyfHztBT08SRTD-q8zyjBDC5mdgd/view?usp=sharing'; }
-function visitblog() { window.location.href = 'https://bahasurunayanakantha.wordpress.com'; }
 
 // ─── Graduation Countdown ─────────────────────────────────────────────────────
 const dayEl = document.getElementById("day");
@@ -137,4 +95,38 @@ if (tabsEl) {
     const el = document.getElementById(id);
     if (el) el.classList.add("live");
   });
+}
+
+// project count
+// Dynamically count projects from projects.html
+async function updateProjectCount() {
+  try {
+    const response = await fetch('projects.html');
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const projectCount = doc.querySelectorAll('span#noofproject').length;
+
+    // Update counter in stats
+    const counter = document.querySelector('.stats-container .counter');
+    if (counter) {
+      counter.textContent = projectCount;
+      counter.setAttribute('data-ceil', String(projectCount).padStart(2, '0'));
+    }
+
+    // Update navbar badge
+    const navBadge = document.querySelector('.project-badge');
+    if (navBadge) {
+      navBadge.textContent = projectCount + "+";
+    }
+  } catch (error) {
+    console.log('Could not fetch project count automatically');
+  }
+}
+
+// Call on page load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', updateProjectCount);
+} else {
+  updateProjectCount();
 }
