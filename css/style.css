@@ -1914,8 +1914,7 @@ center {
 }
 
 /* Actions container */
-.hero-actions {
-  margin-bottom: 28px;
+.hero-actions {  
   opacity: 0;
   animation: heroFadeUp 0.7s ease-out 0.9s forwards;
   width: fit-content;
@@ -1984,6 +1983,7 @@ center {
   transform: translateX(-50%);  
   animation: scrollBounce 2s ease-in-out infinite, heroFadeUp 0.7s ease-out 1.3s forwards;
   opacity: 0;
+  z-index: 3;
   transition: color 0.3s ease;
 }
 
