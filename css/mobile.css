@@ -1,301 +1,324 @@
 @media (min-width: 992px) {
-  .image {
-    margin-bottom: 0;
-  }
+    .image {
+        margin-bottom: 0;
+    }
 
-  .section-center {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 3rem;
-    align-items: start;
-  }
+    .section-center {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3rem;
+        align-items: start;
+    }
 }
 
 @media (max-width: 900px) {
-  .featureproject {
-    grid-template-columns: 1fr;
-    padding: 30px;
-  }
+    .featureproject {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
 
-  .featureproject img {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+    .featureproject img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 900px) {
-  .top {
-    padding: 15px;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "hero"
-      "cta1";
-    gap: 15px;
-  }
+    .top {
+        padding: 15px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "hero"
+            "cta1";
+        gap: 15px;
+    }
 
-  .hero {
-    min-height: 400px;
-  }
+    .hero {
+        min-height: 400px;
+    }
 }
 
 @media screen and (max-width: 576px) {
-  .navbar h1 {
-    font-size: 16px;
-    padding: 10px;
-  }
+    .navbar h1 {
+        font-size: 16px;
+        padding: 10px;
+    }
 
-  .navbar a:link {
-    font-size: 12px;
-    padding: 8px 14px;
-    margin: 3px;
-  }
+    .navbar a:link {
+        font-size: 12px;
+        padding: 8px 14px;
+        margin: 3px;
+    }
 
-  .container {
-    padding: 10px;
-    padding-top: 160px;
-  }
+    .container {
+        padding: 10px;
+        padding-top: 160px;
+    }
 
-  .container h2 {
-    font-size: 18px;
-  }
+    .container h2 {
+        font-size: 18px;
+    }
 
-  .container h3 {
-    font-size: 12px;
-  }
+    .container h3 {
+        font-size: 12px;
+    }
 
-  p {
-    font-size: 12px;
-  }
+    p {
+        font-size: 12px;
+    }
 
-  li {
-    font-size: 12px;
-  }
+    li {
+        font-size: 12px;
+    }
 
-  .container ol {
-    font-size: 12px;
-  }
+    .container ol {
+        font-size: 12px;
+    }
 
-  .container ul {
-    font-size: 12px;
-  }
+    .container ul {
+        font-size: 12px;
+    }
 
-  .hero {
-    min-height: 300px;
-    padding: 15px;
-  }
+    .hero {
+        min-height: 300px;
+        padding: 15px;
+    }
 
-  .name {
-    font-size: 28px;
-    font-weight: 600;
-  }
+    .name {
+        font-size: 28px;
+        font-weight: 600;
+    }
 
-  .auto-text h1 {
-    font-size: 16px;
-  }
+    .auto-text h1 {
+        font-size: 16px;
+    }
 
-  .featureproject {
-    padding: 20px;
-    grid-template-columns: 1fr;
-  }
+    .featureproject {
+        padding: 20px;
+        grid-template-columns: 1fr;
+    }
 
-  .featureproject img {
-    width: 100%;
-    height: auto;
-  }
+    .featureproject img {
+        width: 100%;
+        height: auto;
+    }
 
-  .btn-container button {
-    font-size: 11px;
-    padding: 12px 0;
-  }
+    .featureproject h2 {
+        
+        font-size: 1.3rem;
+    }
 
-  #myBtn {
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    font-size: 16px;
-  }
+    .featureproject h1 {        
+        font-size: 1.3rem;
+    }
 
-  .projectimage img {
-    width: 100%;
-    height: auto;
-  }
+    .featureproject p {
+       
+        font-size: 0.8rem;
+    }    
 
-  .countdown {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px 10px 40px;
-  }
+    .btn-container button {
+        font-size: 11px;
+        padding: 12px 0;
+    }
 
-  .countdown div {
-    font-size: 1.5em;
-    width: 70px;
-    margin: 5px;
-  }
+    #myBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
 
-  .year {
-    font-size: 3em;
-  }
+    .projectimage img {
+        width: 100%;
+        height: auto;
+    }
 
-  .cta1 {
-    padding: 20px;
-  }
+    .countdown {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 20px 10px 40px;
+    }
 
-  .cta1 h2 {
-    font-size: 0.85rem;
-  }
+    .countdown div {
+        font-size: 1.5em;
+        width: 70px;
+        margin: 5px;
+    }
 
-  .descrip {
-    padding: 20px;
-  }
+    .year {
+        font-size: 3em;
+    }
 
-  .blog {
-    padding: 20px;
-  }
+    .cta1 {
+        padding: 20px;
+    }
 
-  .section-center {
-    width: 95%;
-    padding: 2rem 0;
-  }
+    .cta1 h2 {
+        font-size: 0.85rem;
+    }
 
-  .tabs-content {
-    padding: 1.5rem 1rem;
-  }
+    .descrip {
+        padding: 20px;
+    }
 
-  #cv {
-    padding: 12px 24px;
-  }
+    .blog {
+        padding: 20px;
+    }
 
-  #cv h3 {
-    font-size: 12px;
-  }
+    .section-center {
+        width: 95%;
+        padding: 2rem 0;
+    }
 
-  .lhe {
-    padding: 20px 0;
-    margin: 0;
-  }
+    .tabs-content {
+        padding: 1.5rem 1rem;
+    }
 
-  .lhe h2 {
-    font-size: 1rem;
-    grid-gap: 0px;
-    padding: 10px 0px;
-  }
+    #cv {
+        padding: 12px 24px;
+    }
 
-  .lhe h2::before,
-  .lhe h2::after {
-    height: 2px;
-  }
+    #cv h3 {
+        font-size: 12px;
+    }
+
+    .lhe {
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    .lhe h2 {
+        font-size: 1rem;
+        grid-gap: 0px;
+        padding: 10px 0px;
+    }
+
+    .lhe h2::before,
+    .lhe h2::after {
+        height: 2px;
+    }
 }
 
 /* Responsive Banner */
 @media (max-width: 768px) {
-  .projects-banner {
-    padding: 40px 25px;
-    margin: 40px 0 30px 0;
-  }
+    .projects-banner {
+        padding: 40px 25px;
+        margin: 40px 0 30px 0;
+    }
 
-  .projects-banner h2 {
-    font-size: 1.8rem;
-  }
+    .projects-banner h2 {
+        font-size: 1.8rem;
+    }
 
-  .projects-banner p {
-    font-size: 0.95rem;
-  }
+    .projects-banner p {
+        font-size: 0.95rem;
+    }
 
-  .banner-stats {
-    gap: 25px;
-    flex-wrap: wrap;
-  }
+    .banner-stats {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
 
-  .stat-divider {
-    display: none;
-  }
+    .stat-divider {
+        display: none;
+    }
 
-  .banner-btn {
-    width: 100%;
-    justify-content: center;
-  }
+    .banner-btn {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 600px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ── Hero responsive ── */
 @media (max-width: 1012px) {
-  .hero-section {
-    grid-template-columns: 1fr;
-    padding: 20px 20px ;
-    gap: 30px;
-    height: auto;
-    min-height: auto;
-  }
+    .hero-section {
+        grid-template-columns: 1fr;
+        padding: 20px 20px;
+        gap: 30px;
+        height: auto;
+        min-height: auto;
+    }
 
-  .hero-content {
-    padding-top: 0;
-    padding-bottom: 60px;
-    text-align: center;    
-    order: 2;
-  }
+    .hero-content {
+        padding-top: 0;
+        padding-bottom: 60px;
+        text-align: center;
+        order: 2;
+    }
 
-  .hero-content .auto-text {
-    justify-content: center;
-  }
+    .hero-content .auto-text {
+        justify-content: center;
+    }
 
-  .hero-actions {
-    width: 100%;
-     justify-content: center;
-  }
+    .hero-actions {
+        width: 100%;
+        justify-content: center;
+    }
 
-  .hero-social {
-    justify-content: center;
-  }
+    .hero-social {
+        justify-content: center;
+    }
 
-  #hero-canvas-container {
-    order: 1;
-    min-height: 350px;
-    max-height: 400px;
-  }
+    #hero-canvas-container {
+        order: 1;
+        min-height: 350px;
+        max-height: 400px;
+    }
 
-  .hero-name {
-    font-size: 3rem;
-    letter-spacing: -1px;
-  }
+    .hero-name {
+        font-size: 3rem;
+        letter-spacing: -1px;
+    }
 }
 
 @media (max-width: 576px) {
-  .hero-section {
-    padding: 20px 10px;
-  }
+    .hero-section {
+        padding: 20px 10px;
+    }
 
-  #hero-canvas-container {
-    min-height: 280px;
-    max-height: 320px;
-  }
+    #hero-canvas-container {
+        min-height: 280px;
+        max-height: 320px;
+    }
 
-  .hero-name {
-    font-size: 2.2rem;
-    letter-spacing: -0.5px;
-  }
+    .hero-name {
+        font-size: 2.2rem;
+        letter-spacing: -0.5px;
+    }
 
-  .hero-greeting {
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-  }
+    .hero-greeting {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
 
-  .hero-quote {
-    font-size: 0.9rem;
-  }
+    .hero-quote {
+        font-size: 0.9rem;
+    }
 
-  .scroll-indicator {
-    bottom: 20px;
-  }
+    .scroll-indicator {
+        bottom: 20px;
+    }
+
+    .repo-btn {
+        padding: 10px 20px;
+        font-size: 0.7rem;
+    }
+
+    .repo-btn i {
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 800px) {
-  .experience {
-    flex-direction: column;
-  }
+    .experience {
+        flex-direction: column;
+    }
 }

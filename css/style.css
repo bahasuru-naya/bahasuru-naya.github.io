@@ -373,8 +373,8 @@ button {
   color: #000000 !important;
   border: 3px solid rgba(99, 102, 241, 0.45);
   border-radius: 8px;
-  font-size: 15px;
-  font-weight: 800;
+  font-size: 15px;  
+  font-weight: 600;
   letter-spacing: 0.4px;
   text-decoration: none !important;
   cursor: pointer;
@@ -383,9 +383,9 @@ button {
   background-clip: unset !important;
   -webkit-text-fill-color: unset !important;
   border-radius: 8px !important;
-  padding: 12px 28px !important;
+  padding: 12px 28px ;
   margin-top: 0 !important;
-  font-size: 15px !important;
+ 
 }
 
 .repo-btn i {
