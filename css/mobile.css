@@ -1,0 +1,301 @@
+@media (min-width: 992px) {
+  .image {
+    margin-bottom: 0;
+  }
+
+  .section-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    align-items: start;
+  }
+}
+
+@media (max-width: 900px) {
+  .featureproject {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .featureproject img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .top {
+    padding: 15px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero"
+      "cta1";
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navbar h1 {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .navbar a:link {
+    font-size: 12px;
+    padding: 8px 14px;
+    margin: 3px;
+  }
+
+  .container {
+    padding: 10px;
+    padding-top: 160px;
+  }
+
+  .container h2 {
+    font-size: 18px;
+  }
+
+  .container h3 {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  li {
+    font-size: 12px;
+  }
+
+  .container ol {
+    font-size: 12px;
+  }
+
+  .container ul {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 300px;
+    padding: 15px;
+  }
+
+  .name {
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .auto-text h1 {
+    font-size: 16px;
+  }
+
+  .featureproject {
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .featureproject img {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn-container button {
+    font-size: 11px;
+    padding: 12px 0;
+  }
+
+  #myBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .projectimage img {
+    width: 100%;
+    height: auto;
+  }
+
+  .countdown {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 10px 40px;
+  }
+
+  .countdown div {
+    font-size: 1.5em;
+    width: 70px;
+    margin: 5px;
+  }
+
+  .year {
+    font-size: 3em;
+  }
+
+  .cta1 {
+    padding: 20px;
+  }
+
+  .cta1 h2 {
+    font-size: 0.85rem;
+  }
+
+  .descrip {
+    padding: 20px;
+  }
+
+  .blog {
+    padding: 20px;
+  }
+
+  .section-center {
+    width: 95%;
+    padding: 2rem 0;
+  }
+
+  .tabs-content {
+    padding: 1.5rem 1rem;
+  }
+
+  #cv {
+    padding: 12px 24px;
+  }
+
+  #cv h3 {
+    font-size: 12px;
+  }
+
+  .lhe {
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .lhe h2 {
+    font-size: 1rem;
+    grid-gap: 0px;
+    padding: 10px 0px;
+  }
+
+  .lhe h2::before,
+  .lhe h2::after {
+    height: 2px;
+  }
+}
+
+/* Responsive Banner */
+@media (max-width: 768px) {
+  .projects-banner {
+    padding: 40px 25px;
+    margin: 40px 0 30px 0;
+  }
+
+  .projects-banner h2 {
+    font-size: 1.8rem;
+  }
+
+  .projects-banner p {
+    font-size: 0.95rem;
+  }
+
+  .banner-stats {
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .banner-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Hero responsive ── */
+@media (max-width: 900px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding: 20px 20px ;
+    gap: 30px;
+    height: auto;
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding-top: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    order: 2;
+  }
+
+  .hero-content .auto-text {
+    justify-content: center;
+  }
+
+  .hero-actions {
+    width: 100%;
+     justify-content: center;
+  }
+
+  .hero-social {
+    justify-content: center;
+  }
+
+  #hero-canvas-container {
+    order: 1;
+    min-height: 350px;
+    max-height: 400px;
+  }
+
+  .hero-name {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 20px 10px;
+  }
+
+  #hero-canvas-container {
+    min-height: 280px;
+    max-height: 320px;
+  }
+
+  .hero-name {
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-greeting {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-quote {
+    font-size: 0.9rem;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .experience {
+    flex-direction: column;
+  }
+}

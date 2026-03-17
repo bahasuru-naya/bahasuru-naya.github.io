@@ -8,15 +8,18 @@ window.addEventListener("load", () => {
   }, 500);
 
   // Initialize custom mouse cursor
-  initCustomCursor();
-
-  // Initialize reveal animations after load
-  initRevealAnimations();
+  initCustomCursor();  
 
   // Initialize galaxy star field
   initGalaxyStars();
   
 
+});
+
+window.addEventListener("resize", () => {
+  // Initialize galaxy star field
+  initGalaxyStars();
+  
 });
 
 // ─── Galaxy Star Field Animation ────────────────────────────────────────────
@@ -205,24 +208,8 @@ function initGalaxyStars() {
   animate();
 }
 
-// ─── Scroll Reveal (IntersectionObserver – zero scroll jank) ────────────────
-function initRevealAnimations() {
-  const elements = document.querySelectorAll('.descrip, .blog, .featureproject, .section-center, .countdown, .lhe');
-  if (!elements.length) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal', 'active');
-        observer.unobserve(entry.target); // fire once and stop watching
-      }
-    });
-  }, { threshold: 0.1 });
-
-  elements.forEach(el => observer.observe(el));
-}
-
-// ─── Scroll-to-top button & navbar blur (throttled via rAF) ─────────────────
+// ─── Scroll-to-top button & navbar blur  ─────────────────
 const mybutton = document.getElementById("myBtn");
 const nav = document.getElementsByClassName("navbar");
 let scrollTicking = false;
