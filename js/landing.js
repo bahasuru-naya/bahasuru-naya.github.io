@@ -1,8 +1,11 @@
 import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 
 const container = document.getElementById('hero-canvas-container');
 
-let scene, camera, renderer;
+let scene, camera, renderer, composer;
 let particleLayers = [];
 let time = 0;
 const mouse = new THREE.Vector3(0, 0, 0);
@@ -34,9 +37,11 @@ function createParticleSystem(config) {
 
   for (let i = 0; i < config.count; i++) {
     const i3 = i * 3;
+
     const radius = 25 + Math.random() * 30;
     const theta = Math.random() * Math.PI * 2;
     const phi = Math.acos(2 * Math.random() - 1);
+
     const x = radius * Math.sin(phi) * Math.cos(theta);
     const y = radius * Math.sin(phi) * Math.sin(theta);
     const z = radius * Math.cos(phi);
@@ -44,6 +49,7 @@ function createParticleSystem(config) {
     positions[i3] = x;
     positions[i3 + 1] = y;
     positions[i3 + 2] = z;
+
     basePositions[i3] = x;
     basePositions[i3 + 1] = y;
     basePositions[i3 + 2] = z;
@@ -52,10 +58,12 @@ function createParticleSystem(config) {
     const hue = THREE.MathUtils.lerp(config.colorRange.hue[0], config.colorRange.hue[1], dist);
     const sat = THREE.MathUtils.lerp(config.colorRange.sat[0], config.colorRange.sat[1], dist);
     const light = THREE.MathUtils.lerp(config.colorRange.light[0], config.colorRange.light[1], dist);
+
     const color = new THREE.Color().setHSL(hue, sat, light);
     colors[i3] = color.r;
     colors[i3 + 1] = color.g;
     colors[i3 + 2] = color.b;
+
     baseColors[i3] = color.r;
     baseColors[i3 + 1] = color.g;
     baseColors[i3 + 2] = color.b;
@@ -64,14 +72,18 @@ function createParticleSystem(config) {
   geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
   geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
+  const textureLoader = new THREE.TextureLoader();
+  const particleTexture = textureLoader.load('https://placehold.co/32x32/ffffff/ffffff.png?text=+');
+
   const material = new THREE.PointsMaterial({
     size: config.size,
     vertexColors: true,
     transparent: true,
-    opacity: 1.0,
+    opacity: 0.8,
     blending: THREE.AdditiveBlending,
     depthWrite: false,
-    sizeAttenuation: true
+    sizeAttenuation: true,
+    map: particleTexture
   });
 
   const points = new THREE.Points(geometry, material);
@@ -107,6 +119,8 @@ function init() {
   camera.position.z = 100;
 
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.autoClear = false;
+  renderer.setClearAlpha(0.0);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(w, h);
   renderer.setClearColor(0x000000, 0);
@@ -115,6 +129,15 @@ function init() {
   renderer.domElement.style.filter = "drop-shadow(0 0 10px rgba(90, 41, 252, 0.4)) drop-shadow(0 0 25px rgba(203, 80, 255, 0.3))";
 
   container.appendChild(renderer.domElement);
+
+  const renderScene = new RenderPass(scene, camera);  
+
+  var parameters = { minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, format: THREE.RGBAFormat, stencilBuffer: false };
+
+  var renderTarget = new THREE.WebGLRenderTarget(w, h, parameters);
+
+  composer = new EffectComposer(renderer, renderTarget);
+  composer.addPass(renderScene);  
 
 
   layersConfig.forEach(config => {
@@ -130,76 +153,89 @@ function init() {
 
 function updateParticles() {
   mouse.lerp(targetMouse, 0.05);
-  ripples = ripples.filter(r => {
-    r.radius += r.speed;
-    r.strength *= 0.96;
-    return r.radius < r.maxRadius;
+
+  ripples = ripples.filter(ripple => {
+    ripple.radius += ripple.speed;
+    ripple.strength *= 0.96;
+    return ripple.radius < ripple.maxRadius;
   });
 
   particleLayers.forEach(layer => {
     const positions = layer.geometry.attributes.position.array;
     const colors = layer.geometry.attributes.color.array;
     const { velocities, basePositions, baseColors, colorVelocities } = layer.userData;
-    const total = positions.length / 3;
+    const totalParticles = positions.length / 3;
 
-    for (let i = 0; i < total; i++) {
+    for (let i = 0; i < totalParticles; i++) {
       const i3 = i * 3;
-      const px = positions[i3], py = positions[i3 + 1], pz = positions[i3 + 2];
-      let fx = 0, fy = 0, fz = 0;
-      let cx = 0, cy = 0, cz = 0;
+      const px = positions[i3];
+      const py = positions[i3 + 1];
+      const pz = positions[i3 + 2];
 
-      const dx = px - mouse.x, dy = py - mouse.y, dz = pz - mouse.z;
-      const mouseDist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+      let totalForce = new THREE.Vector3();
+      let colorShift = new THREE.Vector3();
+
+      const mouseDist = mouse.distanceTo(new THREE.Vector3(px, py, pz));
       if (mouseDist < mouseRadius) {
-        const f = (1 - mouseDist / mouseRadius) * 0.1;
-        const invD = 1 / (mouseDist || 1);
-        fx += dx * invD * f;
-        fy += dy * invD * f;
-        fz += dz * invD * f;
-        const ci = (1 - mouseDist / mouseRadius) * 0.8;
-        cx += ci; cy += ci; cz += ci;
+        const forceStrength = (1 - mouseDist / mouseRadius) * 0.1;
+        const forceDirection = new THREE.Vector3(px, py, pz).sub(mouse).normalize();
+        totalForce.add(forceDirection.multiplyScalar(forceStrength));
+
+        const colorIntensity = (1 - mouseDist / mouseRadius) * 0.8;
+        colorShift.set(colorIntensity, colorIntensity, colorIntensity);
       }
 
-      for (let r = 0; r < ripples.length; r++) {
-        const rp = ripples[r];
-        const rdx = px - rp.x, rdy = py - rp.y;
-        const rippleDist = Math.sqrt(rdx * rdx + rdy * rdy);
+      ripples.forEach(ripple => {
+        const rippleDist = Math.sqrt(Math.pow(ripple.x - px, 2) + Math.pow(ripple.y - py, 2));
         const rippleWidth = 15;
-        if (Math.abs(rippleDist - rp.radius) < rippleWidth) {
-          const falloff = 1 - Math.abs(rippleDist - rp.radius) / rippleWidth;
-          const rf = rp.strength * falloff * 0.1;
-          const invRD = 1 / (Math.sqrt(rdx * rdx + rdy * rdy + dz * dz) || 1);
-          fx += rdx * invRD * rf;
-          fy += rdy * invRD * rf;
-          fz += dz * invRD * rf;
-          cx += rp.color.r * falloff * rp.strength;
-          cy += rp.color.g * falloff * rp.strength;
-          cz += rp.color.b * falloff * rp.strength;
-        }
-      }
+        if (Math.abs(rippleDist - ripple.radius) < rippleWidth) {
+          const falloff = 1 - Math.abs(rippleDist - ripple.radius) / rippleWidth;
+          const rippleForce = ripple.strength * falloff * 0.1;
+          const forceDirection = new THREE.Vector3(px, py, pz).sub(new THREE.Vector3(ripple.x, ripple.y, pz)).normalize();
+          totalForce.add(forceDirection.multiplyScalar(rippleForce));
 
-      velocities[i3] += fx; velocities[i3 + 1] += fy; velocities[i3 + 2] += fz;
-      const ret = 0.02;
-      velocities[i3] += (basePositions[i3] - px) * ret;
-      velocities[i3 + 1] += (basePositions[i3 + 1] - py) * ret;
-      velocities[i3 + 2] += (basePositions[i3 + 2] - pz) * ret;
-      const damp = 0.94;
-      velocities[i3] *= damp; velocities[i3 + 1] *= damp; velocities[i3 + 2] *= damp;
+          const rippleColor = new THREE.Vector3(ripple.color.r, ripple.color.g, ripple.color.b);
+          colorShift.add(rippleColor.multiplyScalar(falloff * ripple.strength));
+        }
+      });
+
+      velocities[i3] += totalForce.x;
+      velocities[i3 + 1] += totalForce.y;
+      velocities[i3 + 2] += totalForce.z;
+
+      const returnForce = 0.02;
+      velocities[i3] += (basePositions[i3] - px) * returnForce;
+      velocities[i3 + 1] += (basePositions[i3 + 1] - py) * returnForce;
+      velocities[i3 + 2] += (basePositions[i3 + 2] - pz) * returnForce;
+
+      const damping = 0.94;
+      velocities[i3] *= damping;
+      velocities[i3 + 1] *= damping;
+      velocities[i3 + 2] *= damping;
+
       positions[i3] += velocities[i3];
       positions[i3 + 1] += velocities[i3 + 1];
       positions[i3 + 2] += velocities[i3 + 2];
 
-      colorVelocities[i3] += cx; colorVelocities[i3 + 1] += cy; colorVelocities[i3 + 2] += cz;
-      const cret = 0.05;
-      colorVelocities[i3] += (baseColors[i3] - colors[i3]) * cret;
-      colorVelocities[i3 + 1] += (baseColors[i3 + 1] - colors[i3 + 1]) * cret;
-      colorVelocities[i3 + 2] += (baseColors[i3 + 2] - colors[i3 + 2]) * cret;
-      const cdamp = 0.9;
-      colorVelocities[i3] *= cdamp; colorVelocities[i3 + 1] *= cdamp; colorVelocities[i3 + 2] *= cdamp;
+      colorVelocities[i3] += colorShift.x;
+      colorVelocities[i3 + 1] += colorShift.y;
+      colorVelocities[i3 + 2] += colorShift.z;
+
+      const colorReturnForce = 0.05;
+      colorVelocities[i3] += (baseColors[i3] - colors[i3]) * colorReturnForce;
+      colorVelocities[i3 + 1] += (baseColors[i3 + 1] - colors[i3 + 1]) * colorReturnForce;
+      colorVelocities[i3 + 2] += (baseColors[i3 + 2] - colors[i3 + 2]) * colorReturnForce;
+
+      const colorDamping = 0.9;
+      colorVelocities[i3] *= colorDamping;
+      colorVelocities[i3 + 1] *= colorDamping;
+      colorVelocities[i3 + 2] *= colorDamping;
+
       colors[i3] += colorVelocities[i3];
       colors[i3 + 1] += colorVelocities[i3 + 1];
       colors[i3 + 2] += colorVelocities[i3 + 2];
     }
+
     layer.geometry.attributes.position.needsUpdate = true;
     layer.geometry.attributes.color.needsUpdate = true;
   });
@@ -216,7 +252,8 @@ function animate() {
   camera.position.x = Math.sin(time * 0.2) * 2;
   camera.position.y = Math.cos(time * 0.3) * 2;
   camera.lookAt(scene.position);
-  renderer.render(scene, camera);
+  composer.render();
+
 }
 
 function onMouseMove(event) {
@@ -244,7 +281,7 @@ function onClick(event) {
 
 function onWindowResize() {
   const nw = container.offsetWidth;
-  const nh = container.offsetHeight;  
+  const nh = container.offsetHeight;
   camera.aspect = nw / nh;
   camera.updateProjectionMatrix();
   renderer.setSize(nw, nh);
