@@ -126,7 +126,7 @@ function init() {
   renderer.setClearColor(0x000000, 0);
 
   // Add CSS filter directly to the canvas for a bloom-like glow effect
-  renderer.domElement.style.filter = "drop-shadow(0 0 10px rgba(90, 41, 252, 0.4)) drop-shadow(0 0 25px rgba(203, 80, 255, 0.3))";
+  renderer.domElement.style.filter = "drop-shadow(0 0 10px rgba(210, 41, 252, 0.4)) drop-shadow(0 0 25px rgba(186, 74, 255, 0.3))";
 
   container.appendChild(renderer.domElement);
 
