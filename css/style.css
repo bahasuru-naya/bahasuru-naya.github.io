@@ -417,10 +417,9 @@ button {
 
 
 .auto-text {
-  margin: 15px 0;
+  margin: 10px 0;
   display: flex;
-  justify-content: center;
-  min-height: 40px;
+  justify-content: center;  
   align-items: center;
   font-family: 'Space Grotesk', sans-serif;
 }
@@ -1823,7 +1822,7 @@ center {
   max-width: 1200px;
   height: calc(100vh - 160px);
   margin: 0 auto;
-  min-height: 550px;
+  min-height: 520px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -1868,7 +1867,7 @@ center {
   color: var(--accent-cyan);
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   opacity: 0;
   animation: heroFadeUp 0.7s ease-out 0.3s forwards;
 }
@@ -1879,7 +1878,7 @@ center {
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -2px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   background: linear-gradient(135deg, #6366f1 0%, #a855f7 40%, #22d3ee 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1904,11 +1903,10 @@ center {
 /* Hero quote */
 .hero-quote {
   font-size: 1.05rem;
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 400; 
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.8;
-  margin: 20px 0 28px;
+  margin: 10px 0 15px;
   padding: 0;
   opacity: 0;
   animation: heroFadeUp 0.7s ease-out 0.75s forwards;
@@ -1926,7 +1924,7 @@ center {
 .hero-social {
   display: flex;
   justify-content: flex-start;
-  padding-top: 20px;
+  padding-bottom: 10px;
   gap: 16px;
   opacity: 0;
   animation: heroFadeUp 0.7s ease-out 1.05s forwards;
