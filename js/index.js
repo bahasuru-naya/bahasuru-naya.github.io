@@ -27,7 +27,7 @@ countersEl.forEach((counterEl) => {
 const containerEl = document.querySelector(".auto-text");
 
 if (containerEl) {
-  const careers = ["Learner...", "Web Developer...", "Programmer...", "Researcher..."];
+  const careers = ["Learner...","AI/ML Enthusiast...", "Web Developer...", "Programmer...", "Researcher...", "Problem Solver..."];
   let careerIndex = 0;
   let characterIndex = 0;
   let lastTyped = 0;

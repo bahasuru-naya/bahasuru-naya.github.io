@@ -102,21 +102,12 @@ a:link {
   position: absolute;
   top: 0;
   left: 0;
-  width: 20%;
-  height: 30%;
-  border-bottom-right-radius: 100%;
-  background: radial-gradient(ellipse at top left,
-      rgba(99, 102, 241, 0.6) 0%,
-      rgba(139, 92, 246, 0.4) 20%,
-      rgba(139, 92, 246, 0.25) 35%,
-      rgba(34, 211, 238, 0.12) 50%,
-      transparent 70%);
+  width: 200%;
+  height: inherit;
+  border-bottom-right-radius: 50%;  
   pointer-events: none;
   z-index: -1;
-  filter: blur(20px);
-  box-shadow:
-    0 0 40px rgba(99, 102, 241, 0.5),
-    0 10px 60px rgba(139, 92, 246, 0.4);
+  filter: blur(20px);  
 }
 
 .navbar::after {
@@ -124,21 +115,13 @@ a:link {
   position: absolute;
   top: 0;
   right: 0;
-  width: 30%;
-  height: 20%;
-  border-bottom-left-radius: 100%;
-  background: radial-gradient(ellipse at top right,
-      rgba(139, 92, 246, 0.6) 0%,
-      rgba(99, 102, 241, 0.4) 20%,
-      rgba(34, 211, 238, 0.25) 35%,
-      rgba(139, 92, 246, 0.12) 50%,
-      transparent 70%);
+  width: 200%;
+  height: 50px;
+  border-bottom-left-radius: 50%;  
   pointer-events: none;
   z-index: -1;
   filter: blur(20px);
-  box-shadow:
-    0 0 40px rgba(139, 92, 246, 0.5),
-    0 10px 60px rgba(99, 102, 241, 0.4);
+  
 }
 
 .navbar>* {
