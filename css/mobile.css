@@ -56,27 +56,31 @@
     }
 
     .container h2 {
-        font-size: 18px;
+        font-size: 1.1rem;
     }
 
     .container h3 {
-        font-size: 12px;
+        font-size: 1rem;
+    }
+
+    #aboutintro {
+        font-size: 1rem;
     }
 
     p {
-        font-size: 12px;
+        font-size: 0.8rem;
     }
 
     li {
-        font-size: 12px;
+        font-size: 1rem;
     }
 
     .container ol {
-        font-size: 12px;
+        font-size: 0.8rem;
     }
 
     .container ul {
-        font-size: 12px;
+        font-size: 0.8rem;
     }
 
     .hero {
@@ -190,7 +194,7 @@
     }
 
     .lhe h2 {
-        font-size: 1rem;
+        font-size: 1.4rem;
         grid-gap: 0px;
         padding: 10px 0px;
     }

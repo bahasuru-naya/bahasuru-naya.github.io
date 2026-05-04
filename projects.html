@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
     <link data-n-head="ssr" rel="icon" type="image/jpg" sizes="96x96" href="image/logo.jpg">
+
 </head>
 
 <body>
@@ -43,1214 +44,33 @@
     </nav>
 
     <div class="container">
-
         <button onclick="scrollToTop()" id="myBtn" title="Go to top">▲</button>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 1:</span> <span id="titlep">Advanced Audio Denoising System with CNN
-            </h2>
-        </section>
-        <div class="projectimage">
-            <p>
 
-                <img src="image/audio_denoising.png" height="400px">
+        <div class="projects-container">
+            <section class="lhe">
+                <h2><span id="titleh">Projects</span></h2>
+            </section>
+            <div class="projects-header">     
+                <p>Explore my diverse portfolio of AI, web, mobile, and hardware projects</p>
+            </div>
 
-            </p>
+            <!-- Filter Buttons -->
+            <div class="projects-filter">
+                <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
+                <button class="filter-btn" onclick="filterProjects('ai')">AI & ML</button>
+                <button class="filter-btn" onclick="filterProjects('web')">Web</button>
+                <button class="filter-btn" onclick="filterProjects('mobile')">Mobile</button>
+                <button class="filter-btn" onclick="filterProjects('iot')">IoT & Hardware</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded here by JavaScript -->
+            </div>
         </div>
-        <h2><u>Description:</u></h2>
-        <h3>An advanced audio denoising system leveraging Convolutional Neural Networks (CNNs) with U-Net architecture
-            and a ResNet101 backbone. This deep learning-powered solution transforms noisy audio into clear,
-            intelligible sound by intelligently separating voice signals from background noise. The system excels in
-            challenging low signal-to-noise ratio environments, making it ideal for applications in voice assistants,
-            call enhancement, accessibility technologies, and professional audio processing. Trained on the
-            comprehensive LibriSpeech Noise Dataset, it demonstrates robust performance across diverse noise conditions.
-        </h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Deep Learning Model Architecture Design (U-Net with ResNet101)</li>
-                <li>Dataset Preparation and Preprocessing (LibriSpeech Noise Dataset)</li>
-                <li>Model Training and Optimization (achieving 0.0083 validation loss)</li>
-                <li>Client-Server Backend Implementation</li>
-                <li>GUI Development using CustomTkinter</li>
-                <li>Real-time Audio Processing Integration</li>
-            </ol>
-        </h3>
 
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
 
-        <h3>
-            <ul>
-                <li>Python for Core Development</li>
-                <li>TensorFlow/Keras for Deep Learning Framework</li>
-                <li>U-Net Architecture with ResNet101 Backbone</li>
-                <li>LibriSpeech Noise Dataset for Training</li>
-                <li>CustomTkinter for User Interface</li>
-                <li>Client-Server Model for Backend Processing</li>
-                <li>Real-time Audio Recording and Playback</li>
-                <li>Waveform Visualization Libraries</li>
-                <li>Audio Signal Processing Libraries (Librosa, PyAudio)</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>🎙️ Real-time microphone recording and playback</li>
-                <li>📤 Audio upload functionality with waveform visualization</li>
-                <li>🔧 Robust client-server backend architecture</li>
-                <li>📊 Training on LibriSpeech Noise Dataset for diverse environments</li>
-                <li>📈 Achieved validation loss of 0.0083 after 100 epochs</li>
-                <li>🖥️ Scalable and user-friendly GUI with CustomTkinter</li>
-                <li>🎯 Effective noise reduction in low SNR scenarios</li>
-                <li>⚡ Optimized for voice assistants and accessibility applications</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Audio-Denoising-System" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 2:</span> <span id="titlep">Sinhala Chatbot for Sri Lanka Department of Pensions</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-
-                <img src="image/sinhalachatbot.png" height="400px">
-
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>A modular, Retrieval-Augmented Generation (RAG) based AI Chatbot System designed to assist citizens with inquiries related to the Sri Lanka Department of Pensions in the Sinhala language. It bridges the information accessibility gap by providing context-aware, highly accurate, and polite responses to colloquial Sinhala queries, utilizing a localized LLM and a robust vector search pipeline.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>RAG System Architecture Design and Implementation</li>
-                <li>Data Ingestion and Indexing Pipeline Setup</li>
-                <li>Integration of Multilingual Sentence Embedding Model (paraphrase-multilingual-MiniLM-L12-v2)</li>
-                <li>Local LLM Setup and Prompt Engineering (gemma4:e2b via Ollama)</li>
-                <li>Streamlit Web Application UI/UX Development</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Python for Core Development</li>
-                <li>Streamlit for Web Application Framework</li>
-                <li>Ollama for Local LLM Engine</li>
-                <li>gemma4:e2b as the Large Language Model</li>
-                <li>Sentence-Transformers for Vector Embeddings</li>
-                <li>Scikit-Learn for Cosine Similarity Search</li>
-                <li>Pandas for Dataset Management</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>Semantic Understanding using a multilingual sentence embedding model</li>
-                <li>Context-Aware Response Generation via local LLM</li>
-                <li>Domain Restriction to prevent hallucinations and out-of-domain answers</li>
-                <li>User-Friendly, responsive interface built with Streamlit</li>
-                <li>Full Sinhala language support for complex grammatical structures</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Sinhala-Chatbot-for-Sri-Lanka-Department-of-Pensions" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 3:</span> <span id="titlep">Face Recognition Attendance System</span>
-            </h2>
-        </section>
-        <div class="projectimage">
-            <p>
-
-                <img src="image/attendance_system.png" height="400px">
-
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>A cutting-edge Face Recognition Attendance System that leverages AI and deep learning to simplify and
-            automate attendance tracking. This intelligent system utilizes advanced facial feature extraction and
-            classification to provide highly accurate real-time recognition, even in challenging conditions. The system
-            seamlessly integrates with enterprise infrastructure including HR databases, time management platforms, and
-            access control hardware, making it ideal for organizations of all sizes.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Deep Learning Model Implementation Using VGG16 Architecture</li>
-                <li>Face Detection and Recognition Pipeline Development</li>
-                <li>Integration of MediaPipe for Multi-Angle Face Detection</li>
-                <li>Training System Design (Automatic & Manual Training)</li>
-                <li>Enterprise System Integration</li>
-                <li>Real-time Performance Optimization</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Python for Core Development</li>
-                <li>VGG16 Deep Neural Network Model for Facial Feature Extraction</li>
-                <li>MediaPipe for Multi-Angle Face Detection and Tracking</li>
-                <li>TensorFlow/Keras for Deep Learning Framework</li>
-                <li>Computer Vision Libraries (OpenCV)</li>
-                <li>Facial Recognition Libraries</li>
-                <li>Real-time Processing and Optimization</li>
-                <li>Enterprise Integration APIs</li>
-
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>🔍 Real-time Face Recognition powered by VGG16 model with highly accurate facial feature extraction</li>
-                <li>📸 MediaPipe Integration for multi-angle face detection in diverse lighting conditions</li>
-                <li>⚙️ Automatic Training when users are added or removed from the system</li>
-                <li>🛠️ Manual Training option for administrators to optimize accuracy</li>
-                <li>🔗 Seamless Integration with HR databases, time management platforms, and access control hardware</li>
-                <li>📈 Scalability & Flexibility supporting real-time updates and system customization</li>
-                <li>⚡ Enhanced Efficiency reducing administrative overhead while increasing accuracy</li>
-                <li>🚀 Future-Ready with planned GPU support, secure login pages, and cloud-based data storage</li>
-                <li>🔓 Liveness Detection to prevent spoofing and unauthorized access</li>
-                <li>🌐 Edge Computing capabilities for on-device processing</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Face-Recognition-Attendance-System" target="_blank"
-                class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 4:</span> <span id="titlep">Swarm Logistics Simulator - Multi-Agent
-                    Reinforcement Learning</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-                <img src="image/swarm_logistics.png" height="400px">
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>An advanced multi-agent AI system where autonomous robots learn to navigate and coordinate warehouse
-            operations from scratch using Reinforcement Learning. The 20x20 grid-based simulation features 5
-            decentralized agents, 10 delivery boxes, 10 pickup/delivery zones, and static obstacles. Each robot utilizes
-            a tiered Q-Learning architecture to maximize delivery efficiency while avoiding collisions and minimizing
-            total steps, demonstrating the power of decentralized intelligence in scalable logistics.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Reinforcement Learning Architecture Design (Tiered Q-Learning)</li>
-                <li>Reward Function Engineering & Strategy Optimization</li>
-                <li>Backend Simulation Engine Development (Python, Mesa, NumPy)</li>
-                <li>Full-Stack Integration (Express.js API & React Frontend)</li>
-                <li>WebGL-based 3D Visualization Implementation (Three.js)</li>
-                <li>Training & Performance Evaluation (250+ episodes)</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Python for Core Simulation & Reinforcement Learning</li>
-                <li>Mesa Framework for Agent-Based Modeling</li>
-                <li>NumPy for Mathematical Calculations</li>
-                <li>Independent Q-Learning with Epsilon-Greedy Strategy</li>
-                <li>React + Three.js for 3D Frontend Visualization</li>
-                <li>Tailwind CSS for Modern Responsive UI</li>
-                <li>Express.js for Backend API Layer</li>
-                <li>WebGL for High-Performance Browser Rendering</li>
-                <li>Git for Version Control</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>🤖 5 Autonomous Robot Agents with decentralized decision-making</li>
-                <li>📦 10 Delivery Boxes with dynamic pickup and target zones</li>
-                <li>🧠 Tiered Q-Learning (Navigate, Deliver, Return to Base)</li>
-                <li>📈 Efficient Learning (completed deliveries in 433 steps after 250 episodes)</li>
-                <li>🚧 Dynamic Collision Avoidance with agents and obstacles</li>
-                <li>🌐 Interactive 3D Web Visualization of trained episodes</li>
-                <li>⚡ Scalable Architecture bridging AI simulation and modern web tech</li>
-                <li>🎯 Optimized Reward System for task completion and efficiency</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Swarm-Logistics-Simulator" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 5:</span> <span id="titlep">SQL Learning Assistant Chatbot</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-                <img src="image/SQL Learning Assistant Chatbot.png" height="400px" alt="SQL Learning Assistant Chatbot">
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>SQL Learning Assistant Chatbot is an AI-powered chatbot designed to help students and developers learn SQL through interactive, natural language conversations. Built with the Rasa framework, it translates user intents into real-time database operations, allowing users to practice CRUD actions and data analysis without needing to write complex SQL syntax manually. The assistant provides a modern, user-friendly interface with integrated voice support, making the learning experience both dynamic and accessible.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Conversational AI Implementation: Designed and implemented the Rasa-based NLU and dialogue policies for SQL learning.</li>
-                <li>Database Integration: Developed custom actions using Python and SQLAlchemy to interface with MySQL for real-time CRUD operations.</li>
-                <li>Voice Interaction System: Integrated Speech-to-Text and Text-to-Speech capabilities for hands-free learning.</li>
-                <li>Frontend Development: Built a responsive web interface with dark mode and database schema visualization.</li>
-                <li>Quality Assurance: Developed an automated accuracy test suite with a 100-query benchmark, achieving 90% accuracy.</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Rasa Open Source for NLU and Dialogue Management</li>
-                <li>Python & rasa-sdk for Backend Logic</li>
-                <li>SQLAlchemy ORM for Database Connectivity</li>
-                <li>MySQL for Persistent Data Storage</li>
-                <li>HTML5, CSS3, & Vanilla JavaScript for Frontend</li>
-                <li>Socket.io for Bi-directional Communication</li>
-                <li>Web Speech API for Voice Support</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>💬 Natural Language to SQL - Interactively query databases using plain English</li>
-                <li>🔄 Real-time Database Interaction - Perform CRUD operations directly through chat</li>
-                <li>📊 Advanced Data Analysis - Generate formatted tabular results from complex queries</li>
-                <li>🎤 Voice-Enabled Learning - Built-in STT and TTS capabilities</li>
-                <li>🌙 Modern Dashboard - Responsive UI with dark mode and schema visualization</li>
-                <li>🧪 Automated Testing - Accuracy test suite maintaining a 90% benchmark score</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/SQL-learning-chatbot" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 6:</span> <span id="titlep">SmartCV AI - AI-Powered Resume Screening & Skill Gap Analyzer</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-                <img src="image/smartcv_ai.png" height="400px" alt="SmartCV AI">
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>SmartCV AI (AI-CV-Checker) is an AI-powered resume evaluation tool designed to help job seekers and recruiters get faster, data-driven insights from resumes. This project analyzes resumes against job descriptions to generate match scores, skill gap analysis, and actionable recommendations, making resume screening and optimization smarter and more efficient.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Full-Stack Application Development with React and FastAPI</li>
-                <li>AI Integration using Google Gemini AI for context-aware feedback</li>
-                <li>Resume Parsing Engine Implementation (PDF & Word)</li>
-                <li>Skill Gap & Keyword Analysis Logic Development</li>
-                <li>Job-Resume Compatibility Scoring System Design</li>
-                <li>Clean, Modern UI Development with Dark Mode</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>React 19 for Frontend Development</li>
-                <li>TypeScript for Type-Safe Code</li>
-                <li>Tailwind CSS for Styling and Dark Mode</li>
-                <li>Framer Motion for UI Animations</li>
-                <li>FastAPI (Python) for High-Performance Backend</li>
-                <li>Google Gemini AI for Intelligent Analysis</li>
-                <li>PyPDF2 & python-docx for Document Extraction</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>Smart resume parsing (PDF & Word)</li>
-                <li>Job–resume compatibility scoring</li>
-                <li>Skill gap & keyword analysis</li>
-                <li>AI-driven, context-aware feedback</li>
-                <li>Clean, modern UI with responsive dark mode</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/AI-CV-Checker" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 7:</span> <span id="titlep">Lumi – 3D AI Mental Health Companion</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-                <img src="image/lumi.png" height="400px" alt="Lumi 3D AI Mental Health Companion">
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>Lumi is a revolutionary 3D AI mental health companion designed to provide emotional support, mindfulness guidance, and a calming presence whenever you need it. This compassionate interactive experience combines advanced AI technology with an immersive 3D environment to create a safe, supportive space for mental wellness. Lumi listens, understands, and responds with empathy, while reacting and expressing emotions through an interactive 3D avatar.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Full-Stack Application Development</li>
-                <li>3D Avatar Integration and Animation with Babylon.js and Ready Player Me</li>
-                <li>AI Model Integration with Groq Cloud (Llama 3.3 70B)</li>
-                <li>Voice Interaction Implementation using Deepgram TTS</li>
-                <li>Interactive 3D Environment Design and Optimization</li>
-                <li>Backend API Development with Node.js and Express</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Babylon.js for Advanced 3D Graphics and Real-time Rendering</li>
-                <li>Three.js for 3D Visualization</li>
-                <li>Ready Player Me for Custom 3D Avatar Creation</li>
-                <li>HTML5 & CSS3 for Frontend Structure and Styling</li>
-                <li>Node.js for Server-Side Runtime Environment</li>
-                <li>Express.js for RESTful API Development</li>
-                <li>Groq Cloud for High-Performance LLM (Llama 3.3 70B)</li>
-                <li>Deepgram for Advanced Text-to-Speech Voice Interaction</li>
-                <li>WebGL for High-Performance Browser Rendering</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>🧠 Empathetic Intelligence powered by Llama 3.3 (70B) for compassionate, context-aware responses</li>
-                <li>🎤 Seamless Voice Interaction using Deepgram for natural, human-like conversations</li>
-                <li>🤖 Interactive 3D Avatar built with Babylon.js and Ready Player Me that reacts and expresses emotions</li>
-                <li>💃 Avatar Animation - Lumi dances and moves to lift your mood and enhance engagement</li>
-                <li>🧘 Mindfulness Guidance for emotional support and relaxation</li>
-                <li>🎵 Tranquil Background Music for immersive, calming environment</li>
-                <li>💬 Real-time Conversational AI for continuous emotional support</li>
-                <li>🌟 Safe, Supportive Space designed for mental wellness and wellbeing</li>
-                <li>⚡ Optimized Performance with real-time 3D rendering and AI processing</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Lumi-AI-Mental-Health-Companion" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 8:</span> <span id="titlep">Sinhala Colonial History Answer Evaluator</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-                <img src="image/Sinhala Colonial History Answer Evaluator.png" height="400px" alt="Sinhala Colonial History Answer Evaluator">
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>An advanced, AI-powered system designed to automatically evaluate and score student answers on Sri Lankan Colonial History (Portuguese, Dutch, and British periods) in the Sinhala language. The system leverages state-of-the-art AI techniques to provide objective, detailed, and context-aware grading by combining Retrieval-Augmented Generation (RAG) with formal Ontologies, ensuring that evaluations are grounded in historical facts and adhere to specific marking rubrics.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Hybrid Architecture Design: Developed a sophisticated evaluation system combining RAG with formal Ontologies for semantic understanding.</li>
-                <li>RAG Pipeline Implementation: Built a vector-based retrieval system using ChromaDB for factual historical context.</li>
-                <li>Ontology Integration: Developed an RDFLib-based handler to query a structured Knowledge Graph of colonial history entities.</li>
-                <li>Orchestration Layer Management: Implemented the AnswerEvaluationOrchestrator using LangGraph to coordinate between retrieval and evaluation.</li>
-                <li>Local LLM Optimization: Configured and fine-tuned the Gemma model via Ollama for high-performance Sinhala language processing.</li>
-                <li>UI/UX Development: Designed and developed the interactive Streamlit dashboard with real-time processing visualization.</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Streamlit for Web Application Framework</li>
-                <li>Ollama (Gemma) for Local LLM Engine</li>
-                <li>LangChain & LangGraph for Agentic Workflows</li>
-                <li>ChromaDB for Vector Search & RAG</li>
-                <li>RDFLib for Ontology and Knowledge Graph Management</li>
-                <li>Sentence-Transformers for Semantic Embeddings</li>
-                <li>Python for Core System Development</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>🎯 Intelligent Scoring - Automated grading out of 20 marks based on historical accuracy</li>
-                <li>📚 Hybrid Architecture - Combines RAG with Ontologies for deep semantic understanding</li>
-                <li>🗣️ Native Sinhala Support - Optimized for Sinhala language processing and generation</li>
-                <li>📉 Detailed Feedback - Provides strengths, gaps, and justifications for awarded marks</li>
-                <li>💎 Premium UI - Modern responsive Streamlit interface with rich aesthetics</li>
-                <li>🏛️ Historical Scope - Covers Portuguese, Dutch, and British colonial eras in Sri Lanka</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Sinhala-Colonial-History-Answer-Evaluator" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 9:</span> <span id="titlep">Fire-Detection-IOT-with-TinyML</span><span
-                    id="typetext">Group Project</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-                <img src="image/firedetect.png" height="400px" alt="Fire Detection IoT with TinyML">
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>A cutting-edge IoT fire detection system combining a custom dataset with a lightweight neural network optimized for real-time edge deployment on NodeMCU ESP32. This project delivers industrial-grade fire detection capabilities with 96.49% accuracy while maintaining an ultra-compact model size of just 0.03 MB. The system captures real-time sensor data including CO2 equivalent, temperature, humidity, pressure, and gas concentrations, processing it entirely on-device without cloud dependency.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Custom Dataset Collection and Curation (6,000 records)</li>
-                <li>Multi-Sensor Integration and Data Pipeline (ESP32 → Firebase)</li>
-                <li>Data Preprocessing and Class Imbalance Handling</li>
-                <li>Compact Neural Network Architecture Design</li>
-                <li>Model Training and Optimization (96.49% accuracy)</li>
-                <li>TensorFlow Lite Conversion for Edge Deployment</li>
-                <li>Comparative Analysis with 11 ML Algorithms</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Hardware: NodeMCU ESP32, ENS160, AHT21, BMP180, MQ8, MQ3 Gas Sensors</li>
-                <li>Python for Data Science & Model Development</li>
-                <li>TensorFlow/Keras for Neural Network Architecture</li>
-                <li>TensorFlow Lite for On-Device Inference Optimization</li>
-                <li>Firebase for Cloud Data Storage and Collection</li>
-                <li>StandardScaler for Feature Normalization</li>
-                <li>Scikit-learn for Machine Learning Algorithms Comparison</li>
-                <li>CatBoost, LightGBM, XGBoost, Random Forest for Benchmark Analysis</li>
-                <li>Early Stopping and Learning Rate Reduction for Training Optimization</li>
-                <li>Kaggle for Dataset and Notebook Publishing</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>🔥 Real-time Fire Detection with 96.49% accuracy</li>
-                <li>📊 Custom Dataset - 6,000 records with 6 multi-sensor input features</li>
-                <li>🧠 Lightweight Neural Network - Only 0.03 MB, 97% smaller than ensemble methods</li>
-                <li>⚡ TFLite Deployment - 96.08% accuracy maintained on ESP32 with minimal overhead</li>
-                <li>🌍 Fully On-Device Processing - No internet dependency required for inference</li>
-                <li>🔬 Advanced Sensor Suite - ENS160 (eCO2, TVOC), AHT21 (temp/humidity), BMP180 (pressure), MQ8 (H₂), MQ3 (ethanol)</li>
-                <li>📱 Binary Classification - FIRE vs SAFE decision making</li>
-                <li>🛡️ Industrial-Grade Reliability - 95%+ accuracy threshold for fire safety applications</li>
-                <li>⚙️ Optimized Training - Class weighting, early stopping, and learning rate reduction</li>
-                <li>📈 Comprehensive Model Comparison - Benchmarked against 11 ML algorithms</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Dataset Specifications:</u></h2>
-        <h3>
-            <ul>
-                <li>📋 Total Records: 6,000</li>
-                <li>📌 Input Features: 6 (eCO2, humidity, pressure, raw_ethanol, raw_h2, temperature)</li>
-                <li>🎯 Target Classes: 2 (FIRE / SAFE)</li>
-                <li>📡 Collection Method: ESP32-based sensor setup with Firebase cloud storage</li>
-                <li>🏷️ Labeling: Binary manual switch activation</li>
-                <li>📊 Train/Test Split: 80% training, 20% testing</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Model Performance:</u></h2>
-        <h3>
-            <ul>
-                <li>✅ Final Model Accuracy: 96.49%</li>
-                <li>✅ TFLite Accuracy: 96.08% (0.41% drop post-conversion)</li>
-                <li>📊 Log Loss: 0.1131</li>
-                <li>💾 Model Size: 0.03 MB (vs 1.04 MB for CatBoost)</li>
-                <li>🚀 97% Size Reduction compared to ensemble methods</li>
-                <li>⏱️ Max Training Epochs: 100 with early stopping</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Fire-Detection-IOT-with-TinyML" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 10:</span><span id="titlep">Line following robot</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-
-                <img src="image/line_follow.jpeg" height="400px">
-
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>A line-following robot is a type of autonomous robot that is capable of tracking and following a line or
-            path on the ground. These robots are commonly used in various applications such as industrial automation,
-            logistics, and hobby projects. They typically consist of a chassis, wheels, motors, sensors, and a
-            microcontroller for processing.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>I designed, programmed, and rigorously tested the autonomous robot to ensure precise
-            line-tracking performance. My responsibilities included sensor calibration, implementing PID-like control
-            logic in C++ (Arduino), hardware integration, and systematic debugging to optimize speed and accuracy.</h3>
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Arduino: Arduino is a popular open-source electronics platform based on easy-to-use hardware and
-                    software. It's commonly used for building interactive projects and prototypes, making it an ideal
-                    choice for creating a line-following robot.</li>
-                <li>Sensors: Line-following robots typically use infrared (IR) sensors or reflective optical sensors to
-                    detect the line on the ground. These sensors provide feedback to the microcontroller, allowing the
-                    robot to adjust its direction accordingly.</li>
-                <li>Motor Drivers: Motor drivers are electronic circuits or modules used to control the speed and
-                    direction of motors. In the case of a line-following robot, motor drivers are essential for driving
-                    the wheels or motors to maneuver the robot along the desired path.</li>
-                <li>Breadboard or PCB: Breadboards or printed circuit boards (PCBs) are used for prototyping and
-                    connecting electronic components such as sensors, motors, and the microcontroller. They provide a
-                    convenient platform for wiring and testing the circuitry before final assembly.</li>
-                <li>Programming Languages: Arduino programming typically involves writing code in the Arduino IDE using
-                    a variant of C/C++. </li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Line-following-robot" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 11:</span><span id="titlep">Text encryption software </span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-
-                <img src="image/text_encrypt.png" width="600px" height="400px">
-
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>Text encryption software is a type of software designed to encode text data in such a way that it becomes
-            unreadable to anyone without the proper decryption key. This software is commonly used to secure sensitive
-            information, such as personal messages, financial data, or confidential documents, from unauthorized access.
-        </h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>I designed and implemented a robust text encryption application, focusing on data security and user-friendly
-            interaction. My role involved selecting and implementing the AES encryption algorithm, developing the
-            backend logic in Java using NetBeans, and creating a secure interface to ensure reliable data protection for
-            sensitive information.</h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Java Programming Language</li>
-                <li>AES Encryption Algorithm</li>
-                <li>NetBeans IDE</li>
-                <li>Git for Version Control</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Text-encryption" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 12:</span> <span id="titlep">Smart Elevator </span><span
-                    id="typetext">Group Project</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-
-                <img src="image/smart_elevator.jpg" width="600px" height="400px">
-
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>Led the implementation of a cutting-edge smart elevator system, revolutionizing vertical transportation in
-            commercial buildings. The project aimed to enhance user experience, optimize energy efficiency, and improve
-            overall building management. The smart elevator system incorporated advanced technologies to streamline
-            operations and deliver a seamless and intelligent vertical mobility solution.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Research and Development</li>
-                <li>Project planning</li>
-                <li>Team coordination</li>
-                <li>Hands-on involvement in the technical aspects</li>
-                <li>System Integration</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>IoT Integration</li>
-                <li>Arduino</li>
-                <li>Energy Management Systems</li>
-                <li>User Interface (UI) Design(RemoteXY)</li>
-                <li>Mobile App Development(RemoteXY)</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Smart-Elevator" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 13:</span> <span id="titlep">DIY Gaming Steering Wheel with
-                    Arduino</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-
-                <img src="image/steering_wheel.png" height="400px">
-
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>Created a custom DIY gaming steering wheel with pedals powered by an Arduino Uno microcontroller. Instead of
-            using a conventional potentiometer, I utilized a rotary encoder salvaged from an old mouse for steering
-            input. This choice provides a cleaner signal, superior noise immunity, and significantly better
-            durability—ideal for intensive gaming sessions. The system leverages interrupt-driven programming to
-            efficiently process encoder inputs, ensuring precise and responsive steering control.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Hardware Design and Integration</li>
-                <li>Arduino Microcontroller Programming</li>
-                <li>Rotary Encoder Implementation using Interrupt Handlers</li>
-                <li>Firmware Development and Testing</li>
-                <li>Circuit Configuration and Optimization</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Arduino Uno Microcontroller</li>
-                <li>Rotary Encoder (from recycled mouse)</li>
-                <li>FLIP Software for Microcontroller Programming</li>
-                <li>Interrupt-Driven Input Handling (Pins 2 & 3)</li>
-                <li>C/C++ Arduino Programming Language</li>
-                <li>Pedal Input Integration</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Gaming-steering-wheel" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 14:</span> <span id="titlep">Beatflare – Modern Music Player
-                    Website</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-
-                <img src="image/beatflare.png" height="400px">
-
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>Beatflare is a modern, lightweight, and open-source music player website designed to provide a smooth and
-            enjoyable listening experience across all devices. The platform emphasizes clean design, powerful
-            functionality, and an immersive audio experience. Desktop users enjoy enhanced controls, advanced
-            visualizations, and full equalizer capabilities, while mobile users benefit from an optimized responsive
-            interface. The application features an intuitive interface with comprehensive audio management and
-            customizable sound effects.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Full-stack Web Application Development</li>
-                <li>User Interface and User Experience Design</li>
-                <li>Audio Processing and Visualization Implementation</li>
-                <li>Theme and Aesthetic Customization System</li>
-                <li>Responsivity and Cross-Device Optimization</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>HTML5 for Semantic Web Structure</li>
-                <li>CSS3 for Modern Styling and Animations</li>
-                <li>JavaScript for Interactive Functionality and Web Audio API</li>
-                <li>Audio API for Equalizer and Sound Effects Processing</li>
-                <li>Canvas API for Audio Visualization</li>
-                <li>Multiple Audio Format Support (MP3, WAV, OGG, etc.)</li>
-                <li>Light & Dark Mode Theme Implementation</li>
-                <li>Multiple Color Themes</li>
-                <li>Responsive Design for All Devices</li>
-                <li>Party Mode with Visual Effects</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>▶️ Play, Pause, and Skip track controls</li>
-                <li>📂 Support for multiple audio formats</li>
-                <li>🌙 Light & Dark Mode for comfortable viewing</li>
-                <li>🎨 Multiple Color Themes to personalize experience</li>
-                <li>🎚️ Customizable Equalizer with audio effects</li>
-                <li>📃 Effortless Song Management and library organization</li>
-                <li>🔊 Real-time Audio Visualizer</li>
-                <li>🎉 Surprise Party Mode for enhanced entertainment</li>
-                <li>✨ Optimized Desktop Experience with immersive controls</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://bahasuru-naya.github.io/Beatflare-Music-Player/" target="_blank"
-                class="repo-btn repo-btn--live">
-                <i class="fas fa-external-link-alt"></i> Try Beatflare Live
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 15:</span> <span id="titlep">To-Do List Android App</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-
-                <img src="image/todoapp.png">
-
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>A modern and user-friendly To-Do list mobile application built using Kotlin and Jetpack Compose. This
-            application enables users to manage multiple task lists and items with seamless synchronization across
-            devices. It combines offline-first architecture with cloud backup capabilities, providing a robust solution
-            for personal task management with enterprise-grade features like real-time search, manual task reordering,
-            and secure authentication through Firebase.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Full Android Application Development with Kotlin</li>
-                <li>UI/UX Design using Jetpack Compose and Material Design 3</li>
-                <li>Local Data Persistence Implementation using Room Database</li>
-                <li>Cloud Integration with Firebase Authentication and Firestore</li>
-                <li>Feature Implementation (Search, Reordering, Backup/Restore)</li>
-                <li>MVVM Architecture Design and Implementation</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Kotlin for Android Development</li>
-                <li>Jetpack Compose for Modern UI Development</li>
-                <li>Room Database for Local Data Persistence</li>
-                <li>Firebase Authentication </li>
-                <li>Firebase Firestore for Cloud Data Storage</li>
-                <li>Material Design 3 Components</li>
-                <li>Coil for Image Loading</li>
-                <li>ViewModel + Repository Architecture (MVVM)</li>
-                <li>Coroutines for Asynchronous Programming</li>
-                <li>Navigation Component for Screen Navigation</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>✅ Manage multiple task lists and items</li>
-                <li>🌙 Light/Dark mode with system auto-detection</li>
-                <li>🔍 Real-time search across all lists and items</li>
-                <li>🔐 Google Sign-In using Firebase Authentication</li>
-                <li>☁️ Cloud backup and restore via Firebase Firestore</li>
-                <li>🗃️ Offline data persistence using Room Database</li>
-                <li>🔄 Reorder tasks manually within lists</li>
-                <li>🖼️ Displays Google profile picture and username</li>
-                <li>📱 Built with Material Design 3 and Jetpack Compose</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Application Screens:</u></h2>
-        <h3>
-            <ul>
-                <li>Home Screen - Dashboard with quick access to all lists</li>
-                <li>To-Do Lists Screen - Browse and manage all task lists</li>
-                <li>Items Screen - View and interact with tasks in a list</li>
-                <li>Add/Edit/Delete Items - Create and modify tasks</li>
-                <li>Search Screen - Find tasks across all lists in real-time</li>
-                <li>Account Screen - Google Sign-In, backup, and restore functionality</li>
-            </ul>
-        </h3>
-        <br>
-
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/ToDoApp_by_Bahasuru" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 16:</span> <span id="titlep">Media Sharing Platform</span><span
-                    id="typetext">Group Project</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-                <img src="image/Media Sharing Platform.png" height="400px" alt="Media Sharing Platform">
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>A robust, event-driven distributed system designed for efficient media uploading, storage, and asynchronous processing. The system leverages an asynchronous architecture to process media (such as thumbnail generation) without blocking the user interface, ensuring a smooth and responsive experience.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Service-Oriented Architecture: Implemented a robust MediaService layer that encapsulates all business logic, ensuring a clean separation from the API and database layers.</li>
-                <li>Data Modeling & Validation: Developed comprehensive data models using Python, including strict validation for media metadata (UUIDs, status states, file types).</li>
-                <li>Asynchronous Workflow: Designed the integration with Amazon SQS and AWS Lambda to handle background tasks like thumbnail generation without blocking the main application flow.</li>
-                <li>Database Orchestration: Implemented the interface for Amazon DynamoDB, including a local mock version for testing and development.</li>
-                <li>Reliability & Testing: Built an automated simulation environment to verify end-to-end data flow, CRUD operations, and error handling.</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Python (Flask) for Backend Development</li>
-                <li>HTML5, CSS3, JavaScript (Vanilla) for Frontend</li>
-                <li>Amazon S3 for Object Storage</li>
-                <li>Amazon DynamoDB for Database</li>
-                <li>Amazon SQS for Message Queuing</li>
-                <li>AWS Lambda for Serverless Processing</li>
-                <li>Docker & Docker Compose for Containerization</li>
-                <li>Amazon CloudWatch for Monitoring</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>🖼️ Media Upload - Support for image and video uploads with associated metadata</li>
-                <li>⚡ Asynchronous Processing - Automated thumbnail generation using AWS Lambda</li>
-                <li>📊 Metadata Management - Secure storage of media metadata with real-time status updates</li>
-                <li>🔌 RESTful API - Clean API endpoints for media retrieval, status checking, and management</li>
-                <li>☁️ Cloud Native - Built using AWS services for scalability and reliability</li>
-                <li>🐳 Containerized - Fully containerized using Docker and Docker Compose</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Media-Sharing-Platform-" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 17:</span> <span id="titlep">Computer Store Management System with AI Chatbots</span><span
-                    id="typetext">Group Project</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-                <img src="image/computer_shop_chatbot.png" height="400px" alt="Computer Store Management System with AI Chatbots">
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>A revolutionary Computer Store Management System designed to address inefficiencies in the operations of RK Computers. This comprehensive solution modernizes inventory management with real-time updates and enhances customer service through an integrated AI chatbot. The system streamlines business processes for both customers and shop owners using automation and AI-powered tools, ensuring a seamless digital experience.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Development of the AI-powered Customer Assistant Chatbot (Backend & Frontend)</li>
-                <li>Backend Implementation using Rasa for Natural Language Processing (NLP)</li>
-                <li>Frontend Development of an engaging and responsive chat interface</li>
-                <li>System Integration for seamless data flow across various modules</li>
-                <li>Implementation of Voice Support and Text-to-Speech services</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Rasa Open Source for Conversational AI & NLP</li>
-                <li>Python for AI Model Development and Backend Logic</li>
-                <li>HTML5 & CSS3 for Frontend Structure and Styling</li>
-                <li>Vanilla JavaScript for Interactive Chat Functionality</li>
-                <li>Web Speech API for Voice Interaction</li>
-                <li>System Integration with Inventory & Customer Management Modules</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>💬 Natural Conversations - Simulates human-like interaction for effective customer engagement</li>
-                <li>❓ Automated FAQs - Handles queries about products, services, and store locations</li>
-                <li>🎯 Proactive Engagement - Sends personalized product recommendations based on user intent</li>
-                <li>🤝 Seamless Handover - Automatically transfers complex queries to human agents</li>
-                <li>🔄 Real-Time Integration - Connects with inventory modules for accurate product availability</li>
-                <li>🎤 Voice Support - Interactive touch with voice input for customer convenience</li>
-                <li>🔊 Text-to-Speech - Converts responses into natural-sounding voice output for accessibility</li>
-                <li>🕒 24/7 Instant Support - Improved customer satisfaction with immediate responses</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/AI-chatbot-for-computer-shop-2nd-year-group-project" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 18:</span> <span id="titlep">Text to MP3 Converter</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-
-                <img src="image/text_to_mp3.png" height="400px">
-
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>A lightweight Node.js + Express web app that converts any text into a downloadable MP3 audio file using
-            text-to-speech technology. This intuitive application provides a seamless experience with an in-browser
-            audio player for preview before download, live character counting, and comprehensive input validation. Built
-            with modern web standards and no framework dependencies, it delivers a clean, dark-themed interface
-            optimized for both desktop and mobile devices.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Full-Stack Web Application Development</li>
-                <li>Backend API Design and Implementation using Express.js</li>
-                <li>Text-to-Speech Integration and MP3 Generation</li>
-                <li>Frontend UI Development with Modern CSS and Vanilla JavaScript</li>
-                <li>Audio Player Implementation and Download Functionality</li>
-                <li>Input Validation and Error Handling</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Node.js v14 or later for Runtime Environment</li>
-                <li>Express.js for HTTP Server and Static File Serving</li>
-                <li>simple-tts-mp3 NPM Package for Text-to-Speech Conversion</li>
-                <li>HTML5 for Semantic Web Structure</li>
-                <li>CSS3 for Modern Dark Theme Styling</li>
-                <li>Vanilla JavaScript for Interactive Functionality</li>
-                <li>HTML5 Audio API for In-Browser Playback</li>
-                <li>File System Operations for MP3 Generation and Storage</li>
-                <li>npm for Package Management</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>🎙️ Convert text to speech and save as MP3</li>
-                <li>▶️ In-browser audio player — listen before you download</li>
-                <li>⬇️ One-click MP3 download</li>
-                <li>📊 Live character counter (up to 5,000 characters)</li>
-                <li>✅ Input validation with friendly error messages</li>
-                <li>🌐 Clean, modern dark UI — no frameworks required</li>
-                <li>📱 Responsive design for all devices</li>
-                <li>⚡ Fast and lightweight performance</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Project Structure:</u></h2>
-        <h3>
-            <ul>
-                <li>index.js - Express server with API endpoints</li>
-                <li>public/index.html - Frontend user interface</li>
-                <li>public/audio/ - Generated MP3 files storage</li>
-                <li>package.json - Project dependencies and configuration</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Text-to-mp3" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 19:</span> <span id="titlep">Finance-Tracker</span><span
-                    id="typetext">Group Project</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-
-                <img src="image/finance_tracker.png" height="400px">
-
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>A comprehensive personal finance management application built with Java Swing, designed for tracking income,
-            expenses, and financial transfers with an intuitive GUI interface. Finance-Tracker is an Object-Oriented
-            Programming (OOP) group assignment project that provides users with a secure, multi-user personal finance
-            management system. The application allows users to track financial transactions, categorize expenses and
-            income, generate reports, and visualize financial data through interactive 3D pie charts.</h3>
-        <br>
-        <h2><u>My Role:</u></h2>
-        <h3>
-            <ol>
-                <li>Object-Oriented Application Architecture Design</li>
-                <li>Database Design and MySQL Integration</li>
-                <li>User Authentication System Implementation with AES Encryption</li>
-                <li>GUI Development using Java Swing and NetBeans Form Editor</li>
-                <li>Financial Data Visualization with JFreeChart</li>
-                <li>Report Generation (PDF and Excel Formats)</li>
-                <li>Multi-User Data Isolation and Security</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>Java (JDK 8 or higher)</li>
-                <li>Java Swing for GUI Development</li>
-                <li>NetBeans IDE for Application Development</li>
-                <li>MySQL Database for Data Persistence</li>
-                <li>JDBC for Database Connectivity</li>
-                <li>AES Encryption for Password Security</li>
-                <li>Apache POI 5.2.2 for Excel Generation</li>
-                <li>iText for PDF Report Generation</li>
-                <li>JFreeChart for 3D Data Visualization</li>
-                <li>Apache Log4j 2.17.1 for Logging Framework</li>
-                <li>PDFBox for PDF Handling</li>
-                <li>Apache Ant for Build Configuration</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>🔐 Secure Login and Registration with Encrypted Passwords</li>
-                <li>💰 Income Tracking with Customizable Categories</li>
-                <li>💸 Comprehensive Expense Management with Detailed Notes</li>
-                <li>🔄 Fund Transfer Monitoring Between Categories</li>
-                <li>📊 Interactive 3D Pie Charts for Financial Analysis</li>
-                <li>📈 Real-time Balance Updates and Financial Dashboard</li>
-                <li>📄 PDF and Excel Report Generation with Date Range Filtering</li>
-                <li>👥 Multi-User Support with Complete Data Isolation</li>
-                <li>📂 Category Management with Predefined and Custom Options</li>
-                <li>🗄️ MySQL Database Integration for Secure Data Storage</li>
-                <li>🔒 AES Encryption for All Sensitive Information</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/Finance-Tracker" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
-        <br>
-        <section class="lhe">
-            <h2><span id="noofproject"># Project 20:</span> <span id="titlep">Inventory Management System</span><span
-                    id="typetext">Group Project</span></h2>
-        </section>
-        <div class="projectimage">
-            <p>
-                <img src="image/inventory_management.png" height="400px" alt="Inventory Management System">
-            </p>
-        </div>
-        <h2><u>Description:</u></h2>
-        <h3>A full-stack web application for managing inventory with real-time updates, analytics, and a modern user interface. This system allows users to track products, monitor stock levels, and analyze inventory data with interactive charts and dashboards.</h3>
-        <br>
-        <h2><u>My Contribution:</u></h2>
-        <h3>
-            <ol>
-                <li>Collaborative Implementation: Developed as a team effort to create a scalable inventory solution.</li>
-                <li>Database Layer: Implemented stable MongoDB connections and Mongoose configurations.</li>
-                <li>Server-Side Logic: Built robust CRUD operations for inventory items using Node.js and Express.</li>
-                <li>Data Integrity: Integrated Zod for schema validation across internal API routes.</li>
-                <li>Real-time Synchronization: Configured Socket.io to emit live updates for product creation, modification, and deletion.</li>
-            </ol>
-        </h3>
-
-        <br>
-        <h2><u>Technologies and Tools:</u></h2>
-
-        <h3>
-            <ul>
-                <li>React 18 & TypeScript for a type-safe frontend</li>
-                <li>Tailwind CSS & Lucide Icons for modern UI design</li>
-                <li>Node.js & Express for backend services</li>
-                <li>MongoDB & Mongoose for data persistence</li>
-                <li>Socket.io for real-time bidirectional communication</li>
-                <li>Zustand for lightweight state management</li>
-                <li>React Query for efficient data fetching and caching</li>
-                <li>Recharts for interactive data visualization</li>
-                <li>JWT & bcrypt for secure authentication</li>
-            </ul>
-        </h3>
-        <br>
-        <h2><u>Key Features:</u></h2>
-        <h3>
-            <ul>
-                <li>🔐 Secure User Authentication with JWT tokens</li>
-                <li>📦 Full Product Management lifecycle (CRUD)</li>
-                <li>📊 Analytics Dashboard with interactive inventory insights</li>
-                <li>🔄 Real-time Updates via Socket.io for live connectivity</li>
-                <li>📱 Responsive Design optimized for all device sizes</li>
-                <li>🔍 Efficient Product Search and Filtering capabilities</li>
-            </ul>
-        </h3>
-        <div class="repo-btn-wrap">
-            <a href="https://github.com/bahasuru-naya/inventory-management-system" target="_blank" class="repo-btn">
-                <i class="fab fa-github"></i> View Source Code
-            </a>
-        </div>
+        <section class="lhe" style="display:none;"></section>
 
         <!-- Beautiful Banner for More Projects -->
         <div class="projects-banner">
@@ -1270,6 +90,22 @@
             </div>
         </div>
 
+    </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle" style="margin: 0; flex: 1;"></h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -1300,21 +136,138 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Count projects on this page and update navbar badge and banner
-        function updateProjectCountOnPage() {
-            const projectCount = document.querySelectorAll('span#noofproject').length;
-            // Update navbar badge
-            const navBadge = document.querySelector('.project-badge');
-            if (navBadge) {
-                navBadge.textContent = projectCount + "+";
-            }
+        const projectsData = [
+            { id: 1, title: "Advanced Audio Denoising System with CNN", image: "image/audio_denoising.png", category: ["ai", "desktop"], badge: "Featured", description: "Deep learning-powered audio denoising using U-Net architecture with ResNet101 backbone for real-time voice enhancement.", type: "Individual Project", overview: "An advanced audio denoising system leveraging Convolutional Neural Networks (CNNs) with U-Net architecture and a ResNet101 backbone. This deep learning-powered solution transforms noisy audio into clear, intelligible sound by intelligently separating voice signals from background noise.", role: ["Deep Learning Model Architecture Design (U-Net with ResNet101)", "Dataset Preparation and Preprocessing (LibriSpeech Noise Dataset)", "Model Training and Optimization (achieving 0.0083 validation loss)", "Client-Server Backend Implementation", "GUI Development using CustomTkinter", "Real-time Audio Processing Integration"], technologies: ["Python", "TensorFlow/Keras", "U-Net", "ResNet101", "LibriSpeech", "CustomTkinter", "PyAudio", "Librosa"], features: ["🎙️ Real-time microphone recording and playback", "📤 Audio upload functionality with waveform visualization", "🔧 Robust client-server backend architecture", "📊 Training on LibriSpeech Noise Dataset for diverse environments", "📈 Achieved validation loss of 0.0083 after 100 epochs", "🖥️ Scalable and user-friendly GUI with CustomTkinter"], github: "https://github.com/bahasuru-naya/Audio-Denoising-System" },
+            { id: 2, title: "Sinhala Chatbot for Sri Lanka Department of Pensions", image: "image/sinhalachatbot.png", category: "ai", description: "RAG-based AI chatbot providing context-aware responses to Sinhala queries about pension services.", type: "Individual Project", overview: "A modular, Retrieval-Augmented Generation (RAG) based AI Chatbot System designed to assist citizens with inquiries related to the Sri Lanka Department of Pensions in the Sinhala language.", role: ["RAG System Architecture Design and Implementation", "Data Ingestion and Indexing Pipeline Setup", "Integration of Multilingual Sentence Embedding Model", "Local LLM Setup and Prompt Engineering (gemma4:e2b via Ollama)", "Streamlit Web Application UI/UX Development"], technologies: ["Python", "Streamlit", "Ollama", "Sentence-Transformers", "ChromaDB", "Pandas"], features: ["Semantic Understanding using multilingual embeddings", "Context-Aware Response Generation via local LLM", "Domain Restriction to prevent hallucinations", "User-Friendly, responsive Streamlit interface", "Full Sinhala language support"], github: "https://github.com/bahasuru-naya/Sinhala-Chatbot-for-Sri-Lanka-Department-of-Pensions" },
+            { id: 3, title: "Face Recognition Attendance System", image: "image/attendance_system.png", category: ["ai", "desktop"], description: "AI-powered attendance tracking using VGG16 and MediaPipe for accurate real-time face recognition.", type: "Individual Project", overview: "A cutting-edge Face Recognition Attendance System that leverages AI and deep learning to simplify and automate attendance tracking with highly accurate real-time recognition.", role: ["Deep Learning Model Implementation Using VGG16", "Face Detection and Recognition Pipeline Development", "Integration of MediaPipe for Multi-Angle Face Detection", "Training System Design (Automatic & Manual)", "Enterprise System Integration"], technologies: ["Python", "VGG16", "MediaPipe", "TensorFlow/Keras", "OpenCV"], features: ["🔍 Real-time Face Recognition with VGG16", "📸 MediaPipe Integration for multi-angle detection", "⚙️ Automatic Training when users are added/removed", "🛠️ Manual Training option for administrators", "🔗 Seamless Integration with HR databases", "🔓 Liveness Detection to prevent spoofing"], github: "https://github.com/bahasuru-naya/Face-Recognition-Attendance-System" },
+            { id: 4, title: "Swarm Logistics Simulator - Multi-Agent RL", image: "image/swarm_logistics.png", category: "ai", description: "Multi-agent reinforcement learning system with 5 robots learning to coordinate warehouse operations.", type: "Individual Project", overview: "An advanced multi-agent AI system where autonomous robots learn to navigate and coordinate warehouse operations from scratch using Reinforcement Learning.", role: ["Reinforcement Learning Architecture Design (Tiered Q-Learning)", "Reward Function Engineering & Strategy Optimization", "Backend Simulation Engine Development", "Full-Stack Integration (Express.js API & React Frontend)", "WebGL-based 3D Visualization (Three.js)"], technologies: ["Python", "Mesa Framework", "Q-Learning", "React", "Three.js", "Express.js", "NumPy"], features: ["🤖 5 Autonomous Robot Agents with decentralized decision-making", "📦 10 Delivery Boxes with dynamic pickup/target zones", "🧠 Tiered Q-Learning for Navigation, Delivery, Return", "🌐 Interactive 3D Web Visualization", "⚡ Scalable Architecture bridging AI and web"], github: "https://github.com/bahasuru-naya/Swarm-Logistics-Simulator" },
+            { id: 5, title: "SQL Learning Assistant Chatbot", image: "image/SQL Learning Assistant Chatbot.png", category: "ai", description: "Rasa-based chatbot translating natural language to SQL queries with voice interaction and 90% accuracy.", type: "Individual Project", overview: "An AI-powered chatbot designed to help students and developers learn SQL through interactive, natural language conversations.", role: ["Conversational AI Implementation with Rasa", "Database Integration with Python and SQLAlchemy", "Voice Interaction System Implementation", "Frontend Development with dark mode", "Quality Assurance with automated testing"], technologies: ["Rasa", "Python", "SQLAlchemy", "MySQL", "HTML5", "CSS3", "JavaScript", "Web Speech API"], features: ["💬 Natural Language to SQL translation", "🔄 Real-time Database Interaction", "📊 Advanced Data Analysis", "🎤 Voice-Enabled Learning", "🌙 Modern Dashboard with dark mode", "🧪 Automated Testing (90% accuracy)"], github: "https://github.com/bahasuru-naya/SQL-learning-chatbot" },
+            { id: 6, title: "SmartCV AI - AI Resume Screening", image: "image/smartcv_ai.png", category: "ai", description: "AI-powered resume evaluation tool analyzing resumes against job descriptions with Google Gemini integration.", type: "Individual Project", overview: "An AI-powered resume evaluation tool designed to help job seekers and recruiters get faster, data-driven insights from resumes.", role: ["Full-Stack Application Development (React & FastAPI)", "AI Integration using Google Gemini", "Resume Parsing Engine Implementation", "Skill Gap & Keyword Analysis Logic", "Compatibility Scoring System Design"], technologies: ["React 19", "TypeScript", "Tailwind CSS", "FastAPI", "Google Gemini", "PyPDF2", "python-docx"], features: ["Smart resume parsing (PDF & Word)", "Job–resume compatibility scoring", "Skill gap & keyword analysis", "AI-driven, context-aware feedback", "Clean, modern UI with dark mode"], github: "https://github.com/bahasuru-naya/AI-CV-Checker" },
+            { id: 7, title: "Lumi – 3D AI Mental Health Companion", image: "image/lumi.png", category: "ai", description: "3D AI companion providing emotional support with Babylon.js avatar, voice interaction, and empathetic responses.", type: "Individual Project", overview: "A revolutionary 3D AI mental health companion designed to provide emotional support, mindfulness guidance, and a calming presence.", role: ["Full-Stack Application Development", "3D Avatar Integration with Babylon.js and Ready Player Me", "AI Model Integration (Groq Cloud - Llama 3.3 70B)", "Voice Interaction Implementation (Deepgram TTS)", "Interactive 3D Environment Design"], technologies: ["Babylon.js", "Ready Player Me", "Node.js", "Express.js", "Groq Cloud", "Deepgram", "WebGL"], features: ["🧠 Empathetic Intelligence powered by Llama 3.3", "🎤 Seamless Voice Interaction with Deepgram", "🤖 Interactive 3D Avatar with emotion reactions", "💃 Avatar Animation and Dance", "🧘 Mindfulness Guidance", "🎵 Tranquil Background Music"], github: "https://github.com/bahasuru-naya/Lumi-AI-Mental-Health-Companion" },
+            { id: 8, title: "Sinhala Colonial History Answer Evaluator", image: "image/Sinhala Colonial History Answer Evaluator.png", category: "ai", description: "AI system automatically evaluating student answers on colonial history using RAG and formal Ontologies.", type: "Individual Project", overview: "An advanced AI system designed to automatically evaluate student answers on Sri Lankan Colonial History combining RAG with formal Ontologies.", role: ["Hybrid Architecture Design (RAG + Ontologies)", "RAG Pipeline Implementation with ChromaDB", "Ontology Integration using RDFLib", "Orchestration Layer Management with LangGraph", "Local LLM Optimization (Gemma via Ollama)"], technologies: ["Streamlit", "Ollama (Gemma)", "LangChain", "LangGraph", "ChromaDB", "RDFLib", "Sentence-Transformers"], features: ["🎯 Intelligent Scoring out of 20 marks", "📚 Hybrid RAG + Ontology Architecture", "🗣️ Native Sinhala Support", "📉 Detailed Feedback with strengths and gaps", "💎 Premium Streamlit UI", "🏛️ Portuguese, Dutch, and British colonial coverage"], github: "https://github.com/bahasuru-naya/Sinhala-Colonial-History-Answer-Evaluator" },
+            { id: 9, title: "Fire Detection IoT with TinyML", image: "image/firedetect.png", category: "iot", badge: "Group Project", description: "IoT fire detection system with 96.49% accuracy on NodeMCU ESP32 using custom dataset and TFLite.", type: "Group Project", overview: "A cutting-edge IoT fire detection system combining a custom dataset with a lightweight neural network optimized for edge deployment on NodeMCU ESP32.", role: ["Custom Dataset Collection (6,000 records)", "Multi-Sensor Integration (ESP32 → Firebase)", "Data Preprocessing and Class Imbalance Handling", "Compact Neural Network Architecture", "TensorFlow Lite Conversion for Edge Deployment"], technologies: ["NodeMCU ESP32", "ENS160/AHT21/BMP180", "Python", "TensorFlow/Keras", "TensorFlow Lite", "Firebase"], features: ["🔥 96.49% detection accuracy", "📊 Custom 6,000 record dataset", "🧠 0.03 MB lightweight model", "⚡ 97% smaller than ensemble methods", "🌍 Fully on-device processing", "🔬 Advanced 6-sensor suite"], github: "https://github.com/bahasuru-naya/Fire-Detection-IOT-with-TinyML" },
+            { id: 10, title: "Line Following Robot", image: "image/line_follow.jpeg", category: "iot", description: "Autonomous robot tracking lines using IR sensors, Arduino, and motor drivers with PID-like control logic.", type: "Individual Project", overview: "A line-following robot capable of tracking and following a line or path on the ground using IR sensors and Arduino.", role: ["Hardware Design and Integration", "Arduino Microcontroller Programming", "Sensor Calibration and Testing", "PID-like Control Logic Implementation", "Motor Driver Integration"], technologies: ["Arduino", "IR Sensors", "Motor Drivers", "Breadboard/PCB", "C++ (Arduino IDE)"], features: ["Precise line-tracking performance", "Real-time sensor feedback", "Adaptive motor control", "Robust sensor calibration", "Simple yet effective design"], github: "https://github.com/bahasuru-naya/Line-following-robot" },
+            { id: 11, title: "Text Encryption Software", image: "image/text_encrypt.png", category: "desktop", description: "Robust text encryption application using AES algorithm with secure interface built in Java.", type: "Individual Project", overview: "Text encryption software designed to encode text data securely making it unreadable without the proper decryption key.", role: ["Backend Logic Development in Java", "AES Encryption Algorithm Implementation", "User Interface Design", "Security Best Practices Implementation"], technologies: ["Java", "AES Encryption", "NetBeans IDE", "Git"], features: ["Secure AES encryption", "User-friendly interface", "Fast encryption/decryption", "Data protection for sensitive information"], github: "https://github.com/bahasuru-naya/Text-encryption" },
+            { id: 12, title: "Smart Elevator System", image: "image/smart_elevator.jpg", category: "iot", badge: "Group Project", description: "IoT-based smart elevator system with energy management and mobile app control using Arduino.", type: "Group Project", overview: "A cutting-edge smart elevator system revolutionizing vertical transportation with advanced IoT technologies.", role: ["Research and Development", "Project Planning", "Team Coordination", "System Integration", "Technical Implementation"], technologies: ["Arduino", "IoT Integration", "Energy Management", "RemoteXY", "Mobile App Development"], features: ["IoT Integration for smart control", "Energy Management Systems", "Mobile app interface", "Real-time monitoring", "Optimized elevator scheduling"], github: "https://github.com/bahasuru-naya/Smart-Elevator" },
+            { id: 13, title: "DIY Gaming Steering Wheel", image: "image/steering_wheel.png", category: "iot", description: "Custom DIY gaming steering wheel using rotary encoder, Arduino Uno, and interrupt-driven programming.", type: "Individual Project", overview: "A custom DIY gaming steering wheel with pedals powered by Arduino Uno using rotary encoder for precise steering.", role: ["Hardware Design and Integration", "Arduino Programming with Interrupts", "Rotary Encoder Implementation", "Circuit Configuration", "Firmware Development"], technologies: ["Arduino Uno", "Rotary Encoder", "Interrupt Handlers", "C/C++ (Arduino)", "FLIP Software"], features: ["Precise steering control", "Clean encoder signal", "Superior noise immunity", "High durability for gaming", "Interrupt-driven efficiency"], github: "https://github.com/bahasuru-naya/Gaming-steering-wheel" },
+            { id: 14, title: "Beatflare – Modern Music Player", image: "image/beatflare.png", category: "web", description: "Modern music player website with audio visualization, equalizer, themes, and responsive design.", type: "Individual Project", overview: "A modern, lightweight, and open-source music player website providing smooth listening experience across devices.", role: ["Full-stack Web Development", "UI/UX Design", "Audio Processing and Visualization", "Theme Customization System", "Responsive Design Implementation"], technologies: ["HTML5", "CSS3", "JavaScript", "Web Audio API", "Canvas API"], features: ["▶️ Play, pause, skip controls", "🌙 Light & Dark Mode", "🎨 Multiple Color Themes", "🎚️ Customizable Equalizer", "🔊 Real-time Audio Visualizer", "🎉 Party Mode with effects"], demo: "https://bahasuru-naya.github.io/Beatflare-Music-Player/", github: "https://github.com/bahasuru-naya/Beatflare-Music-Player" },
+            { id: 15, title: "To-Do List Android App", image: "image/todoapp.png", category: "mobile", description: "Modern Kotlin Android app with Jetpack Compose, Firebase sync, offline support, and real-time search.", type: "Individual Project", overview: "A modern and user-friendly To-Do list mobile application built using Kotlin and Jetpack Compose with cloud sync.", role: ["Full Android Development with Kotlin", "UI/UX Design using Jetpack Compose", "Local Data Persistence (Room Database)", "Cloud Integration (Firebase)", "MVVM Architecture Design"], technologies: ["Kotlin", "Jetpack Compose", "Room Database", "Firebase", "Material Design 3", "Coroutines"], features: ["✅ Manage multiple task lists", "🌙 Light/Dark mode with auto-detection", "🔍 Real-time search across lists", "🔐 Google Sign-In", "☁️ Cloud backup and restore", "🔄 Manual task reordering"], github: "https://github.com/bahasuru-naya/ToDoApp_by_Bahasuru" },
+            { id: 16, title: "Media Sharing Platform", image: "image/Media Sharing Platform.png", category: "web", badge: "Group Project", description: "Event-driven distributed system for media upload with AWS Lambda asynchronous processing.", type: "Group Project", overview: "A robust, event-driven distributed system designed for efficient media uploading, storage, and async processing.", role: ["Service-Oriented Architecture Implementation", "Data Modeling & Validation", "Asynchronous Workflow Design (SQS + Lambda)", "Database Orchestration (DynamoDB)", "Testing & Reliability"], technologies: ["Python (Flask)", "AWS S3", "DynamoDB", "SQS", "Lambda", "Docker", "CloudWatch"], features: ["🖼️ Media Upload support", "⚡ Asynchronous Processing", "📊 Metadata Management", "🔌 RESTful API", "☁️ Cloud Native Architecture", "🐳 Fully Containerized"], github: "https://github.com/bahasuru-naya/Media-Sharing-Platform-" },
+            { id: 17, title: "Computer Store Management System with AI", image: "image/computer_shop_chatbot.png", category: "web", badge: "Group Project", description: "Full inventory management system with Rasa-based AI chatbot for RK Computers customer service.", type: "Group Project", overview: "A comprehensive Computer Store Management System modernizing operations with AI chatbot integration.", role: ["AI Chatbot Backend Development (Rasa NLP)", "Frontend Chat Interface", "System Integration", "Voice Support Implementation", "Text-to-Speech Services"], technologies: ["Rasa", "Python", "HTML5", "CSS3", "JavaScript", "Web Speech API"], features: ["💬 Natural human-like conversations", "❓ Automated FAQ handling", "🎯 Personalized product recommendations", "🤝 Seamless handover to agents", "🔄 Real-Time inventory integration", "🎤 Voice support with TTS"], github: "https://github.com/bahasuru-naya/AI-chatbot-for-computer-shop-2nd-year-group-project" },
+            { id: 18, title: "Text to MP3 Converter", image: "image/text_to_mp3.png", category: "web", description: "Node.js web app converting text to MP3 audio with in-browser player and dark theme.", type: "Individual Project", overview: "A lightweight web application that converts any text into downloadable MP3 audio files.", role: ["Backend API Design (Express.js)", "Text-to-Speech Integration", "Frontend UI Development", "Audio Player Implementation", "Input Validation & Error Handling"], technologies: ["Node.js", "Express.js", "simple-tts-mp3", "HTML5", "CSS3", "Vanilla JavaScript"], features: ["🎙️ Convert text to speech", "▶️ In-browser audio player", "⬇️ One-click download", "📊 Live character counter", "✅ Input validation", "🌐 Clean dark UI"], github: "https://github.com/bahasuru-naya/Text-to-mp3" },
+            { id: 19, title: "Finance Tracker", image: "image/finance_tracker.png", category: "web", badge: "Group Project", description: "Java Swing personal finance app with MySQL, AES encryption, and JFreeChart visualization.", type: "Group Project", overview: "A comprehensive personal finance management application built with Java Swing for tracking income and expenses.", role: ["OOP Architecture Design", "Database Design & MySQL Integration", "User Authentication with AES Encryption", "GUI Development with Java Swing", "Financial Visualization (JFreeChart)"], technologies: ["Java (JDK 8+)", "Java Swing", "MySQL", "JDBC", "AES Encryption", "JFreeChart", "Apache POI"], features: ["🔐 Secure login with encrypted passwords", "💰 Income tracking with categories", "💸 Comprehensive expense management", "🔄 Fund transfer monitoring", "📊 3D pie chart visualization", "📄 PDF & Excel reports"], github: "https://github.com/bahasuru-naya/Finance-Tracker" },
+            { id: 20, title: "Inventory Management System", image: "image/inventory_management.png", category: "web", badge: "Group Project", description: "Full-stack web application with real-time updates, analytics dashboard, and modern responsive UI.", type: "Group Project", overview: "A full-stack web application for managing inventory with real-time updates and interactive analytics.", role: ["Frontend Development", "Backend API Design", "Database Schema Design", "Real-time Dashboard", "Analytics Implementation"], technologies: ["React 18", "Node.js", "MongoDB", "Socket.io", "Tailwind CSS"], features: ["Track products and stock levels", "Real-time inventory updates", "Interactive analytics dashboard", "Product categorization", "Low stock alerts", "Export reports"], github: "https://github.com/bahasuru-naya/inventory-management-system" }
+        ];
+
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            const filtered = category === 'all' ? projectsData : projectsData.filter(p => Array.isArray(p.category) ? p.category.includes(category) : p.category === category);
+            renderProjects(filtered);
         }
-        // Call on page load
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', updateProjectCountOnPage);
-        } else {
-            updateProjectCountOnPage();
+
+        function initializeFilters() {
+            const counts = {
+                all: projectsData.length,
+                ai: projectsData.filter(p => Array.isArray(p.category) ? p.category.includes('ai') : p.category === 'ai').length,
+                web: projectsData.filter(p => Array.isArray(p.category) ? p.category.includes('web') : p.category === 'web').length,
+                mobile: projectsData.filter(p => Array.isArray(p.category) ? p.category.includes('mobile') : p.category === 'mobile').length,
+                iot: projectsData.filter(p => Array.isArray(p.category) ? p.category.includes('iot') : p.category === 'iot').length,
+                desktop: projectsData.filter(p => Array.isArray(p.category) ? p.category.includes('desktop') : p.category === 'desktop').length
+            };
+
+            const filterContainer = document.querySelector('.projects-filter');
+            filterContainer.innerHTML = `
+                <button class="filter-btn active" onclick="filterProjects('all')">All Projects (${counts.all})</button>
+                <button class="filter-btn" onclick="filterProjects('ai')">AI & ML (${counts.ai})</button>
+                <button class="filter-btn" onclick="filterProjects('web')">Web (${counts.web})</button>
+                <button class="filter-btn" onclick="filterProjects('mobile')">Mobile (${counts.mobile})</button>
+                <button class="filter-btn" onclick="filterProjects('iot')">IoT & Hardware (${counts.iot})</button>
+                <button class="filter-btn" onclick="filterProjects('desktop')">Desktop App (${counts.desktop})</button>
+            `;
         }
+
+        function renderProjects(projects) {
+            const grid = document.getElementById('projectsGrid');
+            grid.innerHTML = '';
+            projects.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'project-card';
+                card.innerHTML = `
+                <div class="project-card-image">
+                    <img 
+                    src="${project.image}" 
+                    alt="${project.title}" 
+                    loading="lazy"
+                    onerror="this.onerror=null; this.parentElement.innerHTML='<div class=&quot;project-card-image-placeholder&quot;><i class=&quot;fas fa-image&quot;></i></div>'"
+                    >
+                </div>
+
+                <div class="project-card-content">
+                    ${project.badge ? `<div class="project-badge-mini">${project.badge}</div>` : ""}
+
+                    <h3 class="project-card-title">${project.title}</h3>
+                    <p class="project-card-description">${project.description}</p>
+
+                    <div class="project-card-tech">
+                    ${project.technologies
+                        .slice(0, 2)
+                        .map(tech => `<span class="tech-tag">${tech}</span>`)
+                        .join("")}
+                    ${project.technologies.length > 2
+                        ? `<span class="tech-tag">+${project.technologies.length - 2}</span>`
+                        : ""}
+                    </div>
+
+                    <div class="project-card-footer">
+                    <button class="view-btn" onclick="openModal(${project.id})">
+                        View Details
+                    </button>
+
+                    <a 
+                        href="${project.github}" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="github-btn" 
+                        title="GitHub Repository"
+                    >
+                        <i class="fab fa-github"></i>
+                    </a>
+                    </div>
+                </div>
+                `;
+                grid.appendChild(card);
+            });
+            document.querySelector('.project-badge').textContent = projectsData.length + "+";
+        }
+
+        function openModal(projectId) {
+            const project = projectsData.find(p => p.id === projectId);
+            if (!project) return;
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            modalTitle.textContent = project.title;
+            modalBody.innerHTML = `<img src="${project.image}" alt="${project.title}" class="modal-image" onerror="this.style.display='none'"><h2 class="modal-title">${project.title}</h2>${project.type ? `<div class="modal-type">${project.type}</div>` : ''}<div class="modal-section"><h3><i class="fas fa-info-circle"></i> Overview</h3><p>${project.overview || project.description}</p></div>${project.role ? `<div class="modal-section"><h3><i class="fas fa-user"></i> My Role</h3><ul>${project.role.map(r => `<li>${r}</li>`).join('')}</ul></div>` : ''}${project.technologies ? `<div class="modal-section"><h3><i class="fas fa-tools"></i> Technologies & Tools</h3><div class="modal-tech-list">${project.technologies.map(tech => `<div class="modal-tech-item">${tech}</div>`).join('')}</div></div>` : ''}${project.features ? `<div class="modal-section"><h3><i class="fas fa-star"></i> Key Features</h3><ul>${project.features.map(f => `<li>${f}</li>`).join('')}</ul></div>` : ''}<div class="modal-actions"><a href="${project.github}" target="_blank" class="modal-action-btn primary"><i class="fab fa-github"></i> View Source Code</a>${project.demo ? `<a href="${project.demo}" target="_blank" class="modal-action-btn secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ''}</div>`;
+            document.getElementById('projectModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('projectModal').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        initializeFilters();
+        renderProjects(projectsData);
     </script>
 </body>
 

@@ -27,7 +27,7 @@ countersEl.forEach((counterEl) => {
 const containerEl = document.querySelector(".auto-text");
 
 if (containerEl) {
-  const careers = ["Learner...","AI/ML Enthusiast...", "Web Developer...", "Programmer...", "Researcher...", "Problem Solver..."];
+  const careers = ["Learner...", "AI/ML Enthusiast...", "Web Developer...", "Programmer...", "Researcher...", "Problem Solver..."];
   let careerIndex = 0;
   let characterIndex = 0;
   let lastTyped = 0;
@@ -103,24 +103,36 @@ async function updateProjectCount() {
   try {
     const response = await fetch('projects.html');
     const html = await response.text();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const projectCount = doc.querySelectorAll('span#noofproject').length;
 
-    // Update counter in stats
-    const counter = document.querySelector('.stats-container .counter');
+    // Extract projectsData array from the script tag in projects.html
+    const match = html.match(/const projectsData\s*=\s*\[([\s\S]*?)\];/);
+    let projectCount = 0;
+
+    if (match) {
+      // Count the number of project object definitions in the array
+      projectCount = (match[1].match(/\{ id:/g) || []).length;
+    }
+
+    if (projectCount === 0) return;
+
+    const counter = document.querySelector('.lhe .experience .stats-container .counter');
     if (counter) {
-      counter.textContent = projectCount;
-      counter.setAttribute('data-ceil', String(projectCount).padStart(2, '0'));
+      counter.textContent = projectCount + "+";
+      counter.innerText = projectCount + "+";
+      counter.setAttribute('data-ceil', String(projectCount).padStart(2, '0'));     
+      console.log(`Project count updated to ${projectCount} based on projects.html data.`);
+    }
+    else{
+      console.log('Counter element not found to update project count.');
     }
 
-    // Update navbar badge
-    const navBadge = document.querySelector('.project-badge');
-    if (navBadge) {
-      navBadge.textContent = projectCount + "+";
-    }
+    // Update navbar badges
+    const navBadges = document.querySelectorAll('.project-badge');
+    navBadges.forEach(badge => {
+      badge.textContent = projectCount + "+";
+    });
   } catch (error) {
-    console.log('Could not fetch project count automatically');
+    console.log('Could not fetch project count automatically:', error);
   }
 }
 
