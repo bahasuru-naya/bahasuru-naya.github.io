@@ -50,7 +50,7 @@
             <section class="lhe">
                 <h2><span id="titleh">Projects</span></h2>
             </section>
-            <div class="projects-header">     
+            <div class="projects-header">
                 <p>Explore my diverse portfolio of AI, web, mobile, and hardware projects</p>
             </div>
 
@@ -95,15 +95,19 @@
 
     <!-- Modal -->
     <div class="modal" id="projectModal">
-        <div class="modal-content">
+        <div class="modal-content-window">
             <div class="modal-header">
-                <h2 id="modalTitle" style="margin: 0; flex: 1;"></h2>
-                <button class="modal-close" onclick="closeModal()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Content will be loaded here -->
+                    <div>
+                        <h2 id="modalTitle" style="margin: 0;"></h2>
+                    </div>
+                    <button class="modal-close" onclick="closeModal()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            <div class="modal-content">                
+                <div class="modal-body" id="modalBody">
+                    <!-- Content will be loaded here -->
+                </div>
             </div>
         </div>
     </div>
@@ -246,16 +250,44 @@
             const project = projectsData.find(p => p.id === projectId);
             if (!project) return;
             const modalTitle = document.getElementById('modalTitle');
+            const modalType = document.getElementById('modalType');
             const modalBody = document.getElementById('modalBody');
             modalTitle.textContent = project.title;
-            modalBody.innerHTML = `<img src="${project.image}" alt="${project.title}" class="modal-image" onerror="this.style.display='none'"><h2 class="modal-title">${project.title}</h2>${project.type ? `<div class="modal-type">${project.type}</div>` : ''}<div class="modal-section"><h3><i class="fas fa-info-circle"></i> Overview</h3><p>${project.overview || project.description}</p></div>${project.role ? `<div class="modal-section"><h3><i class="fas fa-user"></i> My Role</h3><ul>${project.role.map(r => `<li>${r}</li>`).join('')}</ul></div>` : ''}${project.technologies ? `<div class="modal-section"><h3><i class="fas fa-tools"></i> Technologies & Tools</h3><div class="modal-tech-list">${project.technologies.map(tech => `<div class="modal-tech-item">${tech}</div>`).join('')}</div></div>` : ''}${project.features ? `<div class="modal-section"><h3><i class="fas fa-star"></i> Key Features</h3><ul>${project.features.map(f => `<li>${f}</li>`).join('')}</ul></div>` : ''}<div class="modal-actions"><a href="${project.github}" target="_blank" class="modal-action-btn primary"><i class="fab fa-github"></i> View Source Code</a>${project.demo ? `<a href="${project.demo}" target="_blank" class="modal-action-btn secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ''}</div>`;
+            
+            // Adjust title font size based on length to keep header on one line
+            const titleLength = project.title.length;
+            let fontSize;
+            if (titleLength <= 20) {
+                fontSize = '1.5rem';
+            } else if (titleLength <= 35) {
+                fontSize = '1.3rem';
+            } else if (titleLength <= 50) {
+                fontSize = '1.1rem';
+            } else if (titleLength <= 65) {
+                fontSize = '1rem';
+            } else {
+                fontSize = '0.9rem';
+            }
+            modalTitle.style.fontSize = fontSize;
+            
+            // Add type badge inside the title element if it exists
+            if (project.type) {
+                modalTitle.innerHTML = project.title + ' <span id="modalType" class="modal-type">' + project.type + '</span>';
+            } else {
+                modalTitle.innerHTML = project.title;
+            }
+            modalBody.innerHTML = `<img src="${project.image}" alt="${project.title}" class="modal-image" onerror="this.style.display='none'"><div class="modal-section"><h3><i class="fas fa-info-circle"></i> Overview</h3><p>${project.overview || project.description}</p></div>${project.role ? `<div class="modal-section"><h3><i class="fas fa-user"></i> My Role</h3><ul>${project.role.map(r => `<li>${r}</li>`).join('')}</ul></div>` : ''}${project.technologies ? `<div class="modal-section"><h3><i class="fas fa-tools"></i> Technologies & Tools</h3><div class="modal-tech-list">${project.technologies.map(tech => `<div class="modal-tech-item">${tech}</div>`).join('')}</div></div>` : ''}${project.features ? `<div class="modal-section"><h3><i class="fas fa-star"></i> Key Features</h3><ul>${project.features.map(f => `<li>${f}</li>`).join('')}</ul></div>` : ''}<div class="modal-actions"><a href="${project.github}" target="_blank" class="modal-action-btn primary"><i class="fab fa-github"></i> View Source Code</a>${project.demo ? `<a href="${project.demo}" target="_blank" class="modal-action-btn secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ''}</div>`;
             document.getElementById('projectModal').classList.add('active');
             document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                document.querySelector('.modal-content').scrollTop = 0;
+            }, 0);
         }
 
         function closeModal() {
             document.getElementById('projectModal').classList.remove('active');
             document.body.style.overflow = 'auto';
+            document.querySelector('.modal-content').scrollTop = 0;
         }
 
         document.getElementById('projectModal').addEventListener('click', function (e) {
