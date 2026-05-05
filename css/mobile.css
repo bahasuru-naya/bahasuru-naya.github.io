@@ -203,6 +203,10 @@
     .lhe h2::after {
         height: 2px;
     }
+
+    .lhe h2 #titleh {
+        font-size: 1.6rem;
+    }
 }
 
 /* Responsive Banner */

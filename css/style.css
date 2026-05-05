@@ -558,6 +558,7 @@ button {
   border: #8b5cf6 solid 3px;
   border-radius: 20px;
   font-weight: 500;
+  font-size: 2rem;
   padding: 0px 1vw;
   max-width: 50vw;
   align-items: end;
@@ -2416,7 +2417,7 @@ center {
 }
 
 .modal-section li::before {
-  content: '→';
+  content: '⦿';
   position: absolute;
   left: 0;
   color: var(--accent-secondary);
