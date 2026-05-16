@@ -2,8 +2,8 @@
 const countersEl = document.querySelectorAll(".counter");
 
 countersEl.forEach((counterEl) => {
-  const dataCeil = +counterEl.getAttribute("data-ceil");
-  const suffix = counterEl.innerText.includes('+') ? '+' : ''; // preserve + sign
+  let dataCeil = +counterEl.getAttribute("data-ceil");
+  const suffix = counterEl.dataset.plus === 'true' || counterEl.innerText.includes('+') ? '+' : ''; // preserve + sign
   let startTime = null;
   const duration = 1200; // ms
 
@@ -11,6 +11,7 @@ countersEl.forEach((counterEl) => {
 
   function animateCounter(timestamp) {
     if (!startTime) startTime = timestamp;
+    dataCeil = +counterEl.getAttribute("data-ceil") || dataCeil;
     const elapsed = timestamp - startTime;
     const progress = Math.min(elapsed / duration, 1);
     // ease-out quad
@@ -115,11 +116,10 @@ async function updateProjectCount() {
 
     if (projectCount === 0) return;
 
-    const counter = document.querySelector('.lhe .experience .stats-container .counter');
+    const counter = document.querySelector('.experience .stats-container .counter[data-ceil="00"]') || document.querySelector('.experience .stats-container .counter');
     if (counter) {
       counter.textContent = projectCount + "+";
-      counter.innerText = projectCount + "+";
-      counter.setAttribute('data-ceil', String(projectCount).padStart(2, '0'));     
+      counter.setAttribute('data-ceil', String(projectCount));
       console.log(`Project count updated to ${projectCount} based on projects.html data.`);
     }
     else{
