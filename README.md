@@ -1,6 +1,6 @@
-# 🌟 Bahasuru Nayanakantha — Portfolio
+# 🌟 Bahasuru Nayanakantha - Portfolio
 
-Hi! 👋 I'm **Bahasuru Nayanakantha** — a passionate Computer Engineering undergraduate student, tech enthusiast, and creative problem solver.
+Hi! 👋 I'm **Bahasuru Nayanakantha** - a passionate Computer Engineering undergraduate student, tech enthusiast, and creative problem solver.
 This is my personal portfolio showcasing my **projects**, **skills**, **certifications**, and **experiments** in the world of technology.
 
 ---
