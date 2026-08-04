@@ -220,7 +220,7 @@ window.addEventListener('scroll', () => {
   requestAnimationFrame(() => {
     const scrolled = document.documentElement.scrollTop > 20;
     if (mybutton) mybutton.style.display = scrolled ? "block" : "none";
-    if (nav[0]) nav[0].style.backdropFilter = scrolled ? "blur(30px)" : "blur(1px)";
+    if (nav[0]) nav[0].classList.toggle("scrolled", scrolled);
     scrollTicking = false;
   });
 }, { passive: true });

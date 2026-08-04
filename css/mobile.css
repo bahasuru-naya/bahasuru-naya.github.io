@@ -93,8 +93,12 @@
         font-weight: 600;
     }
 
-    .auto-text h1 {
-        font-size: 16px;
+    .card-text .l-text , .words {
+        font-size: 12px;
+        
+    }
+    .l-text{
+        padding-bottom: 10px;
     }
 
     .featureproject {
@@ -262,8 +266,8 @@
         order: 2;
     }
 
-    .hero-content .auto-text {
-        justify-content: center;
+    .card-text {
+        justify-items: center;
     }
 
     .hero-actions {

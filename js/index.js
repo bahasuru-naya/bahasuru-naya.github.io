@@ -24,34 +24,7 @@ countersEl.forEach((counterEl) => {
 });
 
 
-// ─── Typing / Auto-text Animation ────────────────────────────────────────────
-const containerEl = document.querySelector(".auto-text");
 
-if (containerEl) {
-  const careers = ["Learner...", "AI/ML Enthusiast...", "Web Developer...", "Programmer...", "Researcher...", "Problem Solver..."];
-  let careerIndex = 0;
-  let characterIndex = 0;
-  let lastTyped = 0;
-  const typingDelay = 130; // ms per character
-
-  function typingLoop(timestamp) {
-    if (timestamp - lastTyped >= typingDelay) {
-      lastTyped = timestamp;
-      characterIndex++;
-      const word = careers[careerIndex];
-      const article = word[0] === 'I' ? 'an' : 'a';
-      containerEl.innerHTML = `<h1> I am ${article} ${word.slice(0, characterIndex)}</h1>`;
-
-      if (characterIndex >= word.length) {
-        careerIndex = (careerIndex + 1) % careers.length;
-        characterIndex = 0;
-      }
-    }
-    requestAnimationFrame(typingLoop);
-  }
-
-  requestAnimationFrame(typingLoop);
-}
 
 // ─── Navigation helpers ───────────────────────────────────────────────────────
 function redirectToex() { window.location.href = 'about.html#ex'; }
