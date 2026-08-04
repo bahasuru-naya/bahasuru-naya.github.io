@@ -99,37 +99,30 @@ if (tabsEl) {
 }
 
 // project count
-// Dynamically count projects from projects.html
+// Dynamically count projects from data/projects.json
 async function updateProjectCount() {
   try {
-    const response = await fetch('projects.html');
-    const html = await response.text();
+    const response = await fetch('data/projects.json');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-    // Extract projectsData array from the script tag in projects.html
-    const match = html.match(/const projectsData\s*=\s*\[([\s\S]*?)\];/);
-    let projectCount = 0;
-
-    if (match) {
-      // Count the number of project object definitions in the array
-      projectCount = (match[1].match(/\{ id:/g) || []).length;
-    }
+    const projects = await response.json();
+    const projectCount = Array.isArray(projects) ? projects.length : 0;
 
     if (projectCount === 0) return;
 
     const counter = document.querySelector('.experience .stats-container .counter[data-ceil="00"]') || document.querySelector('.experience .stats-container .counter');
     if (counter) {
-      counter.textContent = projectCount + "+";
+      counter.textContent = `${projectCount}+`;
       counter.setAttribute('data-ceil', String(projectCount));
-      console.log(`Project count updated to ${projectCount} based on projects.html data.`);
-    }
-    else{
+      console.log(`Project count updated to ${projectCount} based on data/projects.json.`);
+    } else {
       console.log('Counter element not found to update project count.');
     }
 
     // Update navbar badges
     const navBadges = document.querySelectorAll('.project-badge');
-    navBadges.forEach(badge => {
-      badge.textContent = projectCount + "+";
+    navBadges.forEach((badge) => {
+      badge.textContent = `${projectCount}+`;
     });
   } catch (error) {
     console.log('Could not fetch project count automatically:', error);
