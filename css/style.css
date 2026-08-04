@@ -840,6 +840,7 @@ button {
 
 #myBtn:hover {
   background: var(--gradient-primary);
+  color: var(--bg-primary);
   border-color: transparent;
   transform: translateY(-3px);
   box-shadow: 0 15px 40px var(--accent-glow);
