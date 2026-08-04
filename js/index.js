@@ -116,7 +116,7 @@ async function updateProjectCount() {
       counter.setAttribute('data-ceil', String(projectCount));
       console.log(`Project count updated to ${projectCount} based on data/projects.json.`);
     } else {
-      console.log('Counter element not found to update project count.');
+      //console.log('Counter element not found to update project count.');
     }
 
     // Update navbar badges
