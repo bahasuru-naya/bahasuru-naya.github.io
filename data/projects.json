@@ -569,5 +569,32 @@
       "🤖 AI-driven auto-tagging and categorization"
     ],
     "github": "https://github.com/bahasuru-naya/Smart-Bookmark-Manager"
+  },
+  {
+    "id": 23,
+    "title": "LED Collage Studio",
+    "image": "image/LED_COLLAGE.png",
+    "category": "web",    
+    "description": "Premium web-based LED collage design studio for building animated light art, text overlays, custom shapes, and glassmorphism layouts.",
+    "type": "Individual Project",
+    "overview": "LED Collage Studio is a modern creative workspace for generating dynamic LED-inspired compositions, custom geometric shapes, styled text, and layered visual art. Built with React and Vite, it offers a dark premium UI and real-time manipulation of blocks, colors, and animation patterns.",
+    "role": [
+      "React application architecture and state management",
+      "Interactive canvas editor with drag, resize, and layer controls",
+      "Procedural LED animation engine and palette generation",
+      "Custom shape and typography block system",
+      "Standalone HTML export workflow"
+    ],
+    "technologies": ["React 19", "Vite", "JavaScript", "CSS3", "Glassmorphism", "Canvas", "Custom CSS Clip-Path", "Google Fonts"],
+    "features": [
+      "💡 Multiple LED animation patterns and palettes",
+      "🧩 Drag-and-resize block editing on a 1200x800 workspace",
+      "🖼️ Image, shape, and rich text overlay support",
+      "🎨 Premium dark-mode glassmorphism interface",
+      "⌨️ Keyboard shortcuts and right-click actions",
+      "📦 Single-file HTML export for offline use"
+    ],
+    "demo": "https://bahasuru-naya.github.io/LED-Collage-Studio/",
+    "github": "https://github.com/bahasuru-naya/LED-Collage-Studio"
   }
 ]
