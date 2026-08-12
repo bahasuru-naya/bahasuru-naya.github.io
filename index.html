@@ -4,6 +4,7 @@
   <title>Bahasuru Nayanakantha</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
     integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -101,11 +102,22 @@
       </div>
     </section>
 
-    <div class="descrip" id="mydescription" style="scroll-margin-top: 160px;">
-      <h2>Welcome to my portfolio! I'm Bahasuru Nayanakantha, a dedicated Computer Engineering undergraduate with a
-        strong focus on AI, software development, electronics, and
-        problem-solving. Explore my journey, technical expertise, and the projects that reflect my commitment to
-        excellence.</h2>
+    <div class="descrip hero-card" id="mydescription" style="scroll-margin-top: 160px;">
+      <div class="hero-card__badge">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Welcome to my portfolio
+      </div>
+      <h2 class="hero-card__title">
+        I'm <span class="hero-card__name">Bahasuru Nayanakantha</span>, a dedicated Computer Engineering undergraduate with a strong focus on AI, software development, electronics, and problem-solving.
+      </h2>
+      <p class="hero-card__subtitle">
+        Explore my journey, technical expertise, and the projects that reflect my commitment to excellence.
+      </p>
+      <div class="hero-card__pills">
+        <span class="hero-pill"><i class="fa-solid fa-brain"></i> AI / ML</span>
+        <span class="hero-pill"><i class="fa-solid fa-code"></i> Software Dev</span>
+        <span class="hero-pill"><i class="fa-solid fa-microchip"></i> Electronics</span>
+        <span class="hero-pill"><i class="fa-solid fa-puzzle-piece"></i> Problem Solving</span>
+      </div>
     </div>
 
     <section class="lhe">
@@ -194,6 +206,175 @@
     </section>
 
     <br>
+
+    <!-- ═══ Skills Section (Progress Bars) ═══ -->
+    <section class="lhe">
+      <h2><span id="titleh">Technical Skills</span></h2>
+    </section>
+    <div class="skills-wrapper">
+      <div class="skills-section">
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Python (ML & AI)</span>
+            <span>85%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Web Development (HTML/CSS/JS)</span>
+            <span>82%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="82%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Java & C++</span>
+            <span>78%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="78%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Embedded Systems (C/Arduino)</span>
+            <span>75%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="75%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>React & Node.js</span>
+            <span>80%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="80%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>SQL & Databases</span>
+            <span>77%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="77%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Data Analysis (Pandas/NumPy)</span>
+            <span>84%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="84%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-image-wrapper">
+        <img src="image/tech_skills.jpg" alt="Technical Skills" class="floating-img img-rounded">
+      </div>
+    </div>
+    <br>
+
+    <!-- ═══ Services Section (Animated Cards) ═══ -->
+    <section class="lhe">
+      <h2><span id="titleh">Areas of Expertise</span></h2>
+    </section>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+        <h3>Machine Learning</h3>
+        <p>Developing predictive models and deep learning architectures for complex data problems.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>Web Development</h3>
+        <p>Building responsive, modern, and high-performance web applications.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-microchip"></i></div>
+        <h3>Embedded Systems</h3>
+        <p>Designing hardware-software interfaces and IoT solutions.</p>
+      </div>
+    </div>
+    <br>
+
+    <!-- ═══ FAQs Section (Accordion) ═══ -->
+    <section class="lhe">
+      <h2><span id="titleh">Quick Facts</span></h2>
+    </section>
+    <div class="faq-wrapper">
+      <div class="faq-image-wrapper">
+        <img src="image/quick_facts.jpg" alt="Quick Facts" class="floating-img img-rounded">
+      </div>
+      <div class="accordion-container">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            What are my research interests?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p class="accordion-content-inner">My research interests focus on Artificial Intelligence and Machine Learning, particularly Natural Language Processing (NLP), computer vision, deep learning, and AI-based human motion analysis. I am especially interested in developing practical, lightweight, and explainable AI solutions for real-world applications.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Am I available for freelance projects?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p class="accordion-content-inner">Yes, I am open to exciting freelance opportunities in web development, app development, and machine learning projects. Feel free to contact me via LinkedIn or GitHub.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            What is my preferred tech stack?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p class="accordion-content-inner">My preferred tech stack includes Python, React.js, Next.js, FastAPI, Node.js, and SQL and MongoDB for databases. For AI/ML development, I primarily work with TensorFlow, Scikit-learn, Pandas, and NumPy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            What is my approach to problem-solving?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p class="accordion-content-inner">I believe in breaking down complex issues into manageable components, extensively researching best practices, and building robust, scalable solutions from the ground up.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Do I contribute to open source?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p class="accordion-content-inner">Yes! I regularly share my projects and scripts on GitHub. I'm always looking for opportunities to collaborate with other developers in the open-source community.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <br>
     <h2>
       <center>Countdown to my Graduation</center>
     </h2>
@@ -234,6 +415,7 @@
 
   <script src="js/script.js"></script>
   <script src="js/index.js"></script>
+  <script src="js/animations.js"></script>
 
   <!-- Three.js Particle Nebula -->
   <script type="importmap">
