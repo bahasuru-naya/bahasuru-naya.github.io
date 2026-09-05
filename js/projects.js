@@ -91,7 +91,7 @@
                 `;
                 grid.appendChild(card);
             });
-            document.querySelector('.project-badge').textContent = projectsData.length + "+";
+            
         }
 
         function openModal(projectId) {

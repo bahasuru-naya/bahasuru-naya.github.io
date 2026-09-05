@@ -92,11 +92,7 @@ async function updateProjectCount() {
       //console.log('Counter element not found to update project count.');
     }
 
-    // Update navbar badges
-    const navBadges = document.querySelectorAll('.project-badge');
-    navBadges.forEach((badge) => {
-      badge.textContent = `${projectCount}+`;
-    });
+    
   } catch (error) {
     console.log('Could not fetch project count automatically:', error);
   }
